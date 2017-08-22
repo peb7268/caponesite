@@ -19,7 +19,6 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
-    "ghost": "^0.11.7",
     "knex": "^0.12.9",
     "mandrill-api": "^1.0.45",
     "node-sass": "^4.5.2",
