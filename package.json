@@ -1,0 +1,32 @@
+{
+  "name": "4gc",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "^6.9.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "clear; NODE_ENV=development node server",
+    "startdev": "clear; NODE_ENV=development nodemon server",
+    "styleblog": "node-sass -w public/insights/content/themes/slimer/assets/sass -o public/insights/content/themes/slimer/assets/css/",
+    "dev": "node-sass -w public/styles/sass -o public/styles/css/ & browser-sync start -p 'localhost:5000' --files 'public/styles/css'",
+    "deploy": "clear; git add . && git commit -m 'heroku deploy' && git push && git push heroku",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "ghost": "^0.11.7",
+    "knex": "^0.12.9",
+    "mandrill-api": "^1.0.45",
+    "node-sass": "^4.5.2",
+    "pug": "^2.0.0-beta11",
+    "rxjs": "^5.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
