@@ -26,3 +26,82 @@ blockquote:before, blockquote:after, q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+/*-- Globals --*/
+body {
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #eeeeee 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+  /* IE6-9 */ }
+
+body, p, li, a, h1, h2, h3, h4 {
+  font-size: 12pt;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 50px auto 0; }
+
+header {
+  margin: 0 0 15px; }
+  header .wrapper {
+    display: flex;
+    justify-content: space-between; }
+    header .wrapper .logo-text > span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 27pt;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      color: #333; }
+    header .wrapper .logo-text a.logo {
+      font-weight: 700;
+      background: #158015;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 10px 10px 2px;
+      border-radius: 5px;
+      margin: 0 10px 0 0; }
+      header .wrapper .logo-text a.logo h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 27pt;
+        font-style: italic; }
+    header .wrapper .nav {
+      display: flex;
+      align-items: center; }
+      header .wrapper .nav li {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0 10px 0 0;
+        font-weight: 400;
+        color: #333; }
+
+.content-container {
+  display: flex;
+  justify-content: space-between; }
+  .content-container .banner {
+    background: #333;
+    width: 60%;
+    margin: 0 5% 0 0; }
+  .content-container ul.ctas {
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    max-width: 250px; }
+    .content-container ul.ctas li {
+      margin: 0 0 5px; }
+      .content-container ul.ctas li a {
+        background: #158015;
+        color: #fff;
+        display: flex;
+        padding: 7px;
+        box-sizing: border-box; }

@@ -1,2 +1,68 @@
 
 @import 'reset'
+@import 'colors'
+
+body, p, li, a, h1, h2, h3, h4
+    font-size: 12pt;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
+a
+    text-decoration: none;
+
+.container
+    width: 100%;
+    max-width: 960px;
+    margin: 50px auto 0;
+header
+    margin: 0 0 15px;
+    .wrapper
+        display: flex;
+        justify-content: space-between;
+        .logo-text
+            & > span
+                font-family: 'Oswald', sans-serif;
+                font-size: 27pt;
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                color: #333;
+
+            a.logo
+                font-weight: 700;
+                background: $primary;
+                color: #fff;
+                display: inline-block;
+                padding: 10px 10px 10px 2px;
+                border-radius: 5px;
+                margin: 0 10px 0 0;
+                h1
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 27pt;
+                    font-style: italic;
+        .nav
+            display: flex;
+            align-items: center;
+            li
+                font-family: 'Open Sans', sans-serif;
+                margin: 0 10px 0 0;
+                font-weight: 400;
+                color: #333;
+.content-container
+    display: flex;
+    justify-content: space-between;
+    .banner
+        background: #333;
+        width: 60%;
+        margin: 0 5% 0 0;
+    ul.ctas
+        display: flex;
+        flex-direction: column;
+        width: 26%;
+        max-width: 250px;
+        li 
+            margin: 0 0 5px;
+            a
+                background: $primary;
+                color: #fff;
+                display: flex;
+                padding: 7px;
+                box-sizing: border-box;
