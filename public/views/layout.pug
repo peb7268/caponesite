@@ -11,22 +11,24 @@ html
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 
     body.page(class=active_page)
-        div.container
-            header.group
-                .wrapper
-                    .logo-text
-                        a(href="//imperativedesign.net").logo
-                            h1 4GC
-                        span fourth generation construction
-                    //- a.nav-toggle(href="#")
-                    //-     i.fa.fa-bars
-                    include nav.pug      
-            block content
+        div.header-wrapper.full-wrapper
+            img(src="./img/hbg1.png").hbg
+            div.container
+                header.group
+                    .wrapper
+                        .logo-text
+                            a(href="//imperativedesign.net").logo
+                                h1 4GC
+                            span general construction
+                        //- a.nav-toggle(href="#")
+                        //-     i.fa.fa-bars
+                        include nav.pug      
+    block content
 
-            block bodyscripts
-                script(src='./scripts/rxjs/bundles/Rx.js')
-                script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-                script(src='/js/global.js')
+    block bodyscripts
+        script(src='./scripts/rxjs/bundles/Rx.js')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src='/js/global.js')
 
     block footer
         footer#footer

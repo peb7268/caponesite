@@ -45,63 +45,204 @@ body, p, li, a, h1, h2, h3, h4 {
   -webkit-font-smoothing: antialiased;
   font-family: 'Open Sans', sans-serif; }
 
+body {
+  background: #333; }
+
 a {
   text-decoration: none; }
 
+.full-wrapper {
+  width: 100%;
+  display: flex; }
+
 .container {
   width: 100%;
-  max-width: 960px;
-  margin: 50px auto 0; }
+  max-width: 1200px;
+  margin: 25px auto; }
+
+.header-wrapper {
+  background: #888888;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #888888 1%, #999999 52%, #888888 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #888888 1%, #999999 52%, #888888 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #888888 1%, #999999 52%, #888888 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#888888',GradientType=0 );
+  /* IE6-9 */
+  overflow: hidden;
+  position: relative; }
+  .header-wrapper img.hbg {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    opacity: 0.1; }
+  .header-wrapper > .container {
+    margin: 20px auto 15px;
+    z-index: 10; }
 
 header {
   margin: 0 0 15px; }
   header .wrapper {
     display: flex;
     justify-content: space-between; }
-    header .wrapper .logo-text > span {
-      font-family: 'Oswald', sans-serif;
-      font-size: 27pt;
-      text-transform: uppercase;
-      letter-spacing: -1px;
-      color: #333; }
-    header .wrapper .logo-text a.logo {
-      font-weight: 700;
-      background: #158015;
-      color: #fff;
-      display: inline-block;
-      padding: 10px 10px 10px 2px;
-      border-radius: 5px;
-      margin: 0 10px 0 0; }
-      header .wrapper .logo-text a.logo h1 {
+    header .wrapper .logo-text {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 0 50px; }
+      header .wrapper .logo-text > span {
         font-family: 'Oswald', sans-serif;
-        font-size: 27pt;
-        font-style: italic; }
+        font-size: 11pt;
+        letter-spacing: -1px;
+        color: #333;
+        text-transform: capitalize; }
+      header .wrapper .logo-text a.logo {
+        font-weight: 700;
+        color: #ed2d00;
+        display: inline-block;
+        padding: 10px 10px 10px 2px;
+        border-radius: 5px;
+        margin: 0 10px -9px 0; }
+        header .wrapper .logo-text a.logo h1 {
+          font-family: 'Oswald', sans-serif;
+          font-size: 40pt;
+          letter-spacing: -1px;
+          text-transform: capitalize; }
     header .wrapper .nav {
       display: flex;
       align-items: center; }
       header .wrapper .nav li {
         font-family: 'Open Sans', sans-serif;
-        margin: 0 10px 0 0;
-        font-weight: 400;
-        color: #333; }
+        margin: 10px 15px 0 0;
+        font-weight: bold; }
+        header .wrapper .nav li a {
+          color: #333;
+          transition: all 150ms ease-in-out;
+          transform: scale(1);
+          display: block; }
+        header .wrapper .nav li a:hover {
+          color: #ed2d00;
+          transform: scale(1.2); }
+
+.content-wrapper > .banner {
+  position: relative;
+  height: 500px;
+  background: #333;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  box-shadow: inset 0px 0px 145px #000;
+  overflow: hidden; }
+  .content-wrapper > .banner img {
+    position: absolute;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    filter: blur(2px);
+    opacity: 0.7;
+    transition: filter, opacity 500ms; }
+  .content-wrapper > .banner .cta {
+    position: absolute;
+    right: 7%;
+    bottom: 25%; }
+    .content-wrapper > .banner .cta h2 {
+      color: #fff;
+      text-transform: capitalize;
+      font-size: 30pt;
+      font-weight: bold;
+      text-shadow: 0px 1px #333; }
+    .content-wrapper > .banner .cta ul {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 7px 0 0;
+      float: right; }
+      .content-wrapper > .banner .cta ul li {
+        display: flex;
+        width: 49%; }
+        .content-wrapper > .banner .cta ul li a {
+          display: flex;
+          background: #ed2d00;
+          color: #fff;
+          width: 100%;
+          justify-content: center;
+          padding: 7px;
+          border-radius: 4px;
+          text-transform: capitalize;
+          border: 1px solid #ba2300;
+          transition: background 250ms; }
+          .content-wrapper > .banner .cta ul li a:hover {
+            cursor: pointer; }
+          .content-wrapper > .banner .cta ul li a:hover {
+            background: #a11e00; }
+        .content-wrapper > .banner .cta ul li:last-child a {
+          background: #253d59;
+          border: 1px solid #162435; }
+          .content-wrapper > .banner .cta ul li:last-child a:hover {
+            background: #0f1823; }
+  .content-wrapper > .banner:hover > img {
+    filter: blur(0px);
+    opacity: 1;
+    cursor: pointer; }
 
 .content-container {
   display: flex;
   justify-content: space-between; }
-  .content-container .banner {
-    background: #333;
-    width: 60%;
-    margin: 0 5% 0 0; }
-  .content-container ul.ctas {
+  .content-container.band {
+    background: #253d59;
+    box-sizing: border-box;
+    padding: 30px 5%;
+    margin: 0;
+    width: 100%;
+    max-width: -webkit-fill-available;
     display: flex;
-    flex-direction: column;
-    width: 26%;
-    max-width: 250px; }
-    .content-container ul.ctas li {
-      margin: 0 0 5px; }
-      .content-container ul.ctas li a {
-        background: #158015;
+    justify-content: space-between;
+    border-top: 1px solid #000; }
+    .content-container.band .testimonials {
+      width: 67%; }
+      .content-container.band .testimonials p {
+        color: #b9d9ff; }
+    .content-container.band form {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 0; }
+      .content-container.band form > h2 {
+        margin: 0 0 25px; }
+      .content-container.band form label {
+        margin: 0 0 20px;
+        color: #efefef; }
+        .content-container.band form label input, .content-container.band form label textarea {
+          margin: 4px 0 0;
+          padding: 4px;
+          width: 100%;
+          border-radius: 1px;
+          border: 1px solid #ccc; }
+      .content-container.band form button {
+        background: #ed2d00;
         color: #fff;
-        display: flex;
-        padding: 7px;
-        box-sizing: border-box; }
+        font-size: 12pt;
+        border: none;
+        padding: 7px; }
+    .content-container.band h2 {
+      color: #fff;
+      font-weight: 700;
+      font-size: 14pt;
+      text-transform: capitalize;
+      margin: 0 0 10px; }
+
+.slick-slider {
+  height: 250px;
+  width: 98%;
+  margin: 0 auto; }
+  .slick-slider.slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    margin: 0 15px 0 0; }

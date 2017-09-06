@@ -1,13 +1,59 @@
 //- index.pug
 extends layout.pug
 
+block styles
+        link(rel="stylesheet", href="/styles/css/styles.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick.css")
+        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick-theme.css")
+
+
+
 block content
-    .content-container
+    .content-wrapper
         .banner
-        ul.ctas
-            li 
-                a(href="#") one
-            li 
-                a(href="#") two
-            li 
-                a(href="#") three
+            img(src="./img/banner1.jpg")
+            .cta
+                h2 jump start your next project
+                ul
+                    li
+                        a our work
+                    li
+                        a get a quote
+    .content-container.container
+        .folio
+            div.project 1
+            div.project 2
+            div.project 3
+            div.project 4
+            div.project 5
+
+    .content-container.container.band
+        div.testimonials
+            h2 what people are saying
+            p 
+                | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+        form
+            h2 get in touch
+            label First Name
+                input(type="text")
+            label Last Name
+                input(type="text")
+            label Email
+                input(type="text")
+            label Phone
+                input(type="text")
+            label Job Description
+                textarea
+            button(type="submit") Submit
+
+block bodyscripts
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src='/js/global.js')
+    script(type="text/javascript" src="scripts/slick-carousel/slick/slick.js")
