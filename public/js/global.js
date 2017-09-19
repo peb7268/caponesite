@@ -15,13 +15,13 @@ function bindEvents(){
 
     //only run this on desktop
     $(window).scroll(() => { 
-        fixElemToContainer('.home-sidebar form', '.testimonials'); 
+        fixElemToContainer('.home-sidebar', '.testimonials'); 
     }).trigger('scroll');
 }
 
 function fixElemToContainer(sel, relativeToSel){
     var $elem       = $(sel);
-    var offset      = $(relativeToSel).offset().top - ($('.header-wrapper').outerHeight() + 15);   //account for fixed header
+    var offset      = $(relativeToSel).offset().top - ($('.header-wrapper').outerHeight() - 80);   //account for fixed header
     var scrollPos   = $(window).scrollTop() - offset;
     var toTop       = $(window).scrollTop();
     

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Oswald:400,500,700|Passion+One:400,700,900");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -214,7 +215,8 @@ header {
     max-width: -webkit-fill-available;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #000; }
+    border-top: 1px solid #000;
+    overflow: hidden; }
     .content-container.band p {
       margin: 0 0 15px; }
     .content-container.band .section {
@@ -226,8 +228,15 @@ header {
       .content-container.band .home-content .testimonials {
         margin: 0 0 25px 0; }
         .content-container.band .home-content .testimonials .quote {
-          font-size: 44pt;
-          font-family: 'Passion One', cursive; }
+          font-size: 75pt;
+          font-family: 'Passion One', cursive;
+          transform: scale(-1, 1);
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .content-container.band .home-content .testimonials:nth-child(1) {
+          padding: 35px 0 0 45px;
+          position: relative; }
       .content-container.band .home-content h4 {
         color: #fff;
         font-size: 14pt;
@@ -237,33 +246,84 @@ header {
     .content-container.band .home-sidebar {
       width: 25%;
       display: flex;
-      position: relative; }
+      position: relative;
+      flex-direction: column; }
+      .content-container.band .home-sidebar h2 {
+        margin: 0 0 25px;
+        color: #fff; }
       .content-container.band .home-sidebar form {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin: 0 0 0; }
-        .content-container.band .home-sidebar form > h2 {
-          margin: 0 0 25px;
-          color: #fff; }
+        margin: 0 0 25px; }
         .content-container.band .home-sidebar form label {
           margin: 0 0 20px;
           color: #efefef; }
           .content-container.band .home-sidebar form label input, .content-container.band .home-sidebar form label textarea {
             margin: 4px 0 0;
-            padding: 4px;
+            padding: 7px 4px;
             width: 100%;
-            border-radius: 1px;
-            border: 1px solid #ccc; }
+            border-radius: 2px;
+            border: 1px solid #010203;
+            font-size: 10pt; }
         .content-container.band .home-sidebar form button {
           background: #ed2d00;
           color: #fff;
           font-size: 12pt;
           border: none;
           padding: 7px; }
+      .content-container.band .home-sidebar .affiliations {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+        .content-container.band .home-sidebar .affiliations h2 {
+          margin-bottom: 10px; }
+        .content-container.band .home-sidebar .affiliations li {
+          margin: 0 0 15px; }
+          .content-container.band .home-sidebar .affiliations li a {
+            color: #fff;
+            font-size: 15pt;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            padding: 7px 0; }
+            .content-container.band .home-sidebar .affiliations li a i {
+              font-size: 22pt;
+              position: absolute;
+              left: 0; }
+        .content-container.band .home-sidebar .affiliations li.social {
+          justify-content: center;
+          align-content: center;
+          display: flex; }
+          .content-container.band .home-sidebar .affiliations li.social ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%; }
+            .content-container.band .home-sidebar .affiliations li.social ul li {
+              margin: 0 0 5px;
+              box-sizing: border-box;
+              padding: 4px 4px 4px 10px;
+              border-radius: 4px; }
+              .content-container.band .home-sidebar .affiliations li.social ul li:nth-child(1) {
+                background: #d90007; }
+              .content-container.band .home-sidebar .affiliations li.social ul li:nth-child(2) {
+                background: #3b5998; }
+              .content-container.band .home-sidebar .affiliations li.social ul li:nth-child(3) {
+                background: #29A036; }
+        .content-container.band .home-sidebar .affiliations li.bbb {
+          background: #fff;
+          padding: 5px;
+          box-sizing: border-box;
+          border-radius: 10px;
+          border-radius: 10px;
+          display: inline-flex;
+          align-self: center; }
+          .content-container.band .home-sidebar .affiliations li.bbb img {
+            max-width: 100%;
+            max-height: 100px; }
     .content-container.band h2 {
       color: #ff6e2f;
       font-weight: 700;
