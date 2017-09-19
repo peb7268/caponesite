@@ -1,10 +1,11 @@
 //- layout.pug
-html
+html(lang="en")
   head
     title Fourth Generation Construction Inc | 4GC
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     
     block scripts
+        script(src="https://use.fontawesome.com/8e07ad6cf8.js")
 
     block styles
         link(rel="stylesheet", href="/styles/css/styles.css")
@@ -17,11 +18,12 @@ html
                 header.group
                     .wrapper
                         .logo-text
-                            a(href="//imperativedesign.net").logo
+                            a(href="//www.4gconline.com/").logo
                                 h1 4GC
                             span general construction
                         //- a.nav-toggle(href="#")
                         //-     i.fa.fa-bars
+                        a.phone(href="tel:7739086311") (773) 908-6311
                         include nav.pug      
     block content
 

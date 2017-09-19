@@ -8,6 +8,7 @@ body, p, li, a, h1, h2, h3, h4
     font-family: 'Open Sans', sans-serif;
 body
     background: #333;
+    position: relative;
 a
     text-decoration: none;
 
@@ -16,8 +17,8 @@ a
     display: flex;
 
 .container
-    width: 100%;
-    max-width: 1200px;
+    width: 92%;
+    max-width: 1500px;
     margin: 25px auto;
 
 .header-wrapper
@@ -28,7 +29,12 @@ a
     background: linear-gradient(to bottom, rgba(136,136,136,1) 1%,rgba(153,153,153,1) 52%,rgba(136,136,136,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#888888',GradientType=0 ); /* IE6-9 */
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    border-top: 1px solid #555;
+    box-shadow: 0px 1px 1px #555;
     
     img.hbg
         width: 100%;
@@ -50,6 +56,7 @@ a
         z-index: 10;
 
 header
+    position: relative;
     margin: 0 0 15px;
     .wrapper
         display: flex;
@@ -57,7 +64,7 @@ header
         .logo-text
             display: flex;
             flex-direction: column;
-            margin: 0 0 0 50px;
+            margin: 0; //0 0 0 50px;
 
             & > span
                 font-family: 'Oswald', sans-serif;
@@ -90,17 +97,22 @@ header
                     transition: all 150ms ease-in-out;
                     transform: scale(1);
                     display: block;
-                a:hover
+                a:hover, a.active
                     color: $primary;
                     transform: scale(1.2);
+        .phone
+            position: absolute;
+            right: 15px;
+            color: #eee;
 
 .content-wrapper
+    margin-top: 128px;
     & > .banner
         position: relative;
         height: 500px;
         background: #333;
-        border-top: 2px solid #000;
-        border-bottom: 2px solid #000;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
         box-shadow: inset 0px 0px 145px #000;
         overflow: hidden;
         img
@@ -159,6 +171,7 @@ header
     display: flex;
     justify-content: space-between;
     &.band
+        position: relative;
         background: #253d59;
         box-sizing: border-box;
         padding: 30px 5%;
@@ -168,38 +181,62 @@ header
         display: flex;
         justify-content: space-between;
         border-top: 1px solid #000;
+        p
+            margin: 0 0 15px;
+        .section
+            margin: 0 0 25px 0;
         
-        .testimonials
+        .home-content
             width: 67%;
             p
                 color: #b9d9ff;
-        form
+            .testimonials
+                margin: 0 0 25px 0;
+                .quote
+                    font-size: 44pt;
+                    font-family: 'Passion One', cursive;
+            h4 
+                color: #fff;
+                font-size: 14pt;
+                font-weight: bold;
+                text-transform: capitalize;
+                margin: 25px 0 7px;
+        .home-sidebar
             width: 25%;
             display: flex;
-            flex-direction: column;
-            margin: 0 0 0;
-            & > h2 
-                margin: 0 0 25px;
-            label
-                margin: 0 0 20px;
-                color: #efefef;
-                input, textarea
-                    margin: 4px 0 0;
-                    padding: 4px;
-                    width: 100%;
-                    border-radius: 1px;
-                    border: 1px solid #ccc;
-            button
-                background: $primary;
-                color: #fff;
-                font-size: 12pt;
-                border: none;
-                padding: 7px;
-        
+            position: relative;
+            form
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0 0 0;
+                
+                & > h2 
+                    margin: 0 0 25px;
+                    color: #fff;
+                label
+                    margin: 0 0 20px;
+                    color: #efefef;
+                    input, textarea
+                        margin: 4px 0 0;
+                        padding: 4px;
+                        width: 100%;
+                        border-radius: 1px;
+                        border: 1px solid #ccc;
+                button
+                    background: $primary;
+                    color: #fff;
+                    font-size: 12pt;
+                    border: none;
+                    padding: 7px;
+            
         h2
-            color: #fff;
+            color: #ff6e2f;
             font-weight: 700;
-            font-size: 14pt;
+            font-size: 18pt;
             text-transform: capitalize;
             margin: 0 0 10px;
 
@@ -216,3 +253,14 @@ header
         background: #000;
         color: #fff;
         margin: 0 15px 0 0;
+
+.btt
+    position: fixed;
+    right: 2%;
+    color: #fff;
+    top: 92%;
+    font-size: 15pt;
+    display: none;
+    z-index: 10;
+    &:hover
+        cursor: pointer;

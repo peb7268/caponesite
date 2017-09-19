@@ -3,7 +3,6 @@ extends layout.pug
 
 block styles
         link(rel="stylesheet", href="/styles/css/styles.css")
-        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick.css")
         link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick-theme.css")
 
@@ -22,38 +21,164 @@ block content
                         a get a quote
     .content-container.container
         .folio
-            div.project 1
-            div.project 2
-            div.project 3
-            div.project 4
-            div.project 5
+            div.project
+                img(src="../../img/projects/resized/fence.jpg")
+            div.project
+                img(src="../../img/projects/resized/night_deck.jpg")
+            div.project
+                img(src="../../img/projects/resized/patio_grill.jpg")
+            div.project
+                img(src="../../img/projects/resized/pergola.jpg")
+            div.project
+                img(src="../../img/projects/resized/rooftop_deck.jpg")
+            div.project
+                img(src="../../img/projects/resized/trex_deck.jpg")
 
     .content-container.container.band
-        div.testimonials
-            h2 what people are saying
-            p 
-                | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
-                | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
-                | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
-                | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
-                | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
-                | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+        div.home-content
+            .testimonials
+                h2 what people are saying
+                p 
+                    | <span class="quote">"</span>Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+            #about.section
+                h2 who we are
+                p 
+                    | 4th Generation Construction Inc (4GC) os a family owned and operated business 
+                    | that has been serving the Chicagoland area for decades. As a General Contractor, 
+                    | 4GC works very close with it's clients to provide the higherst level of service and 
+                    | quality for each project. MOst of our projects, if not all, come from referrals from 
+                    | our satisfied clients.
 
-        form
-            h2 get in touch
-            label First Name
-                input(type="text")
-            label Last Name
-                input(type="text")
-            label Email
-                input(type="text")
-            label Phone
-                input(type="text")
-            label Job Description
-                textarea
-            button(type="submit") Submit
+                p
+                    | 4GC provides a variety of services from a simple residentail repair to elaborate commercial rehabs.
+                    | We also specialize in wooden porches and decks.
+
+                p For a free quote, please give us a call today.
+                        
+            #services.section
+                h2 what we do
+                
+                h4 new construction
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+                
+                h4 rehab
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+                
+                h4 porches &amp; decks
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+                h4 arbors
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+                
+                h4 roofing
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+                h4 framing
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+                
+                h4 fences
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+                h4 hardwood flooring
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+                h4 foundations
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+
+                h4 design, drawing, &amp; expediting
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+                h4 new construction
+                p
+                    | Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in 
+                    | blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, 
+                    | ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia 
+                    | nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante i
+                    | psum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus 
+                    | eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.
+        .home-sidebar
+            form
+                h2#contact get in touch
+                label First Name
+                    input(type="text")
+                label Last Name
+                    input(type="text")
+                label Email
+                    input(type="text")
+                label Phone
+                    input(type="text")
+                label Job Description
+                    textarea
+                button(type="submit") Submit
+
+            | <i class="fa fa-chevron-circle-up btt" aria-hidden="true"></i>
 
 block bodyscripts
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="scripts/jquery.scrollto/jquery.scrollTo.js")
     script(src='/js/global.js')
     script(type="text/javascript" src="scripts/slick-carousel/slick/slick.js")

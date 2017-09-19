@@ -46,7 +46,8 @@ body, p, li, a, h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif; }
 
 body {
-  background: #333; }
+  background: #333;
+  position: relative; }
 
 a {
   text-decoration: none; }
@@ -56,8 +57,8 @@ a {
   display: flex; }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
+  width: 92%;
+  max-width: 1500px;
   margin: 25px auto; }
 
 .header-wrapper {
@@ -72,7 +73,12 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#888888',GradientType=0 );
   /* IE6-9 */
   overflow: hidden;
-  position: relative; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  border-top: 1px solid #555;
+  box-shadow: 0px 1px 1px #555; }
   .header-wrapper img.hbg {
     width: 100%;
     display: block;
@@ -86,6 +92,7 @@ a {
     z-index: 10; }
 
 header {
+  position: relative;
   margin: 0 0 15px; }
   header .wrapper {
     display: flex;
@@ -93,7 +100,7 @@ header {
     header .wrapper .logo-text {
       display: flex;
       flex-direction: column;
-      margin: 0 0 0 50px; }
+      margin: 0; }
       header .wrapper .logo-text > span {
         font-family: 'Oswald', sans-serif;
         font-size: 11pt;
@@ -124,74 +131,81 @@ header {
           transition: all 150ms ease-in-out;
           transform: scale(1);
           display: block; }
-        header .wrapper .nav li a:hover {
+        header .wrapper .nav li a:hover, header .wrapper .nav li a.active {
           color: #ed2d00;
           transform: scale(1.2); }
+    header .wrapper .phone {
+      position: absolute;
+      right: 15px;
+      color: #eee; }
 
-.content-wrapper > .banner {
-  position: relative;
-  height: 500px;
-  background: #333;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  box-shadow: inset 0px 0px 145px #000;
-  overflow: hidden; }
-  .content-wrapper > .banner img {
-    position: absolute;
-    max-width: 100%;
-    top: 0;
-    left: 0;
-    filter: blur(2px);
-    opacity: 0.7;
-    transition: filter, opacity 500ms; }
-  .content-wrapper > .banner .cta {
-    position: absolute;
-    right: 7%;
-    bottom: 25%; }
-    .content-wrapper > .banner .cta h2 {
-      color: #fff;
-      text-transform: capitalize;
-      font-size: 30pt;
-      font-weight: bold;
-      text-shadow: 0px 1px #333; }
-    .content-wrapper > .banner .cta ul {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin: 7px 0 0;
-      float: right; }
-      .content-wrapper > .banner .cta ul li {
+.content-wrapper {
+  margin-top: 128px; }
+  .content-wrapper > .banner {
+    position: relative;
+    height: 500px;
+    background: #333;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: inset 0px 0px 145px #000;
+    overflow: hidden; }
+    .content-wrapper > .banner img {
+      position: absolute;
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      filter: blur(2px);
+      opacity: 0.7;
+      transition: filter, opacity 500ms; }
+    .content-wrapper > .banner .cta {
+      position: absolute;
+      right: 7%;
+      bottom: 25%; }
+      .content-wrapper > .banner .cta h2 {
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 30pt;
+        font-weight: bold;
+        text-shadow: 0px 1px #333; }
+      .content-wrapper > .banner .cta ul {
         display: flex;
-        width: 49%; }
-        .content-wrapper > .banner .cta ul li a {
+        justify-content: space-between;
+        width: 100%;
+        margin: 7px 0 0;
+        float: right; }
+        .content-wrapper > .banner .cta ul li {
           display: flex;
-          background: #ed2d00;
-          color: #fff;
-          width: 100%;
-          justify-content: center;
-          padding: 7px;
-          border-radius: 4px;
-          text-transform: capitalize;
-          border: 1px solid #ba2300;
-          transition: background 250ms; }
-          .content-wrapper > .banner .cta ul li a:hover {
-            cursor: pointer; }
-          .content-wrapper > .banner .cta ul li a:hover {
-            background: #a11e00; }
-        .content-wrapper > .banner .cta ul li:last-child a {
-          background: #253d59;
-          border: 1px solid #162435; }
-          .content-wrapper > .banner .cta ul li:last-child a:hover {
-            background: #0f1823; }
-  .content-wrapper > .banner:hover > img {
-    filter: blur(0px);
-    opacity: 1;
-    cursor: pointer; }
+          width: 49%; }
+          .content-wrapper > .banner .cta ul li a {
+            display: flex;
+            background: #ed2d00;
+            color: #fff;
+            width: 100%;
+            justify-content: center;
+            padding: 7px;
+            border-radius: 4px;
+            text-transform: capitalize;
+            border: 1px solid #ba2300;
+            transition: background 250ms; }
+            .content-wrapper > .banner .cta ul li a:hover {
+              cursor: pointer; }
+            .content-wrapper > .banner .cta ul li a:hover {
+              background: #a11e00; }
+          .content-wrapper > .banner .cta ul li:last-child a {
+            background: #253d59;
+            border: 1px solid #162435; }
+            .content-wrapper > .banner .cta ul li:last-child a:hover {
+              background: #0f1823; }
+    .content-wrapper > .banner:hover > img {
+      filter: blur(0px);
+      opacity: 1;
+      cursor: pointer; }
 
 .content-container {
   display: flex;
   justify-content: space-between; }
   .content-container.band {
+    position: relative;
     background: #253d59;
     box-sizing: border-box;
     padding: 30px 5%;
@@ -201,36 +215,59 @@ header {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #000; }
-    .content-container.band .testimonials {
+    .content-container.band p {
+      margin: 0 0 15px; }
+    .content-container.band .section {
+      margin: 0 0 25px 0; }
+    .content-container.band .home-content {
       width: 67%; }
-      .content-container.band .testimonials p {
+      .content-container.band .home-content p {
         color: #b9d9ff; }
-    .content-container.band form {
+      .content-container.band .home-content .testimonials {
+        margin: 0 0 25px 0; }
+        .content-container.band .home-content .testimonials .quote {
+          font-size: 44pt;
+          font-family: 'Passion One', cursive; }
+      .content-container.band .home-content h4 {
+        color: #fff;
+        font-size: 14pt;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin: 25px 0 7px; }
+    .content-container.band .home-sidebar {
       width: 25%;
       display: flex;
-      flex-direction: column;
-      margin: 0 0 0; }
-      .content-container.band form > h2 {
-        margin: 0 0 25px; }
-      .content-container.band form label {
-        margin: 0 0 20px;
-        color: #efefef; }
-        .content-container.band form label input, .content-container.band form label textarea {
-          margin: 4px 0 0;
-          padding: 4px;
-          width: 100%;
-          border-radius: 1px;
-          border: 1px solid #ccc; }
-      .content-container.band form button {
-        background: #ed2d00;
-        color: #fff;
-        font-size: 12pt;
-        border: none;
-        padding: 7px; }
+      position: relative; }
+      .content-container.band .home-sidebar form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0; }
+        .content-container.band .home-sidebar form > h2 {
+          margin: 0 0 25px;
+          color: #fff; }
+        .content-container.band .home-sidebar form label {
+          margin: 0 0 20px;
+          color: #efefef; }
+          .content-container.band .home-sidebar form label input, .content-container.band .home-sidebar form label textarea {
+            margin: 4px 0 0;
+            padding: 4px;
+            width: 100%;
+            border-radius: 1px;
+            border: 1px solid #ccc; }
+        .content-container.band .home-sidebar form button {
+          background: #ed2d00;
+          color: #fff;
+          font-size: 12pt;
+          border: none;
+          padding: 7px; }
     .content-container.band h2 {
-      color: #fff;
+      color: #ff6e2f;
       font-weight: 700;
-      font-size: 14pt;
+      font-size: 18pt;
       text-transform: capitalize;
       margin: 0 0 10px; }
 
@@ -246,3 +283,14 @@ header {
     background: #000;
     color: #fff;
     margin: 0 15px 0 0; }
+
+.btt {
+  position: fixed;
+  right: 2%;
+  color: #fff;
+  top: 92%;
+  font-size: 15pt;
+  display: none;
+  z-index: 10; }
+  .btt:hover {
+    cursor: pointer; }
