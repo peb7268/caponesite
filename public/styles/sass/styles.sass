@@ -87,6 +87,7 @@ a
             .nav
                 display: flex;
                 align-items: center;
+                transition: height 350ms ease-in-out;
                 li
                     font-family: 'Open Sans', sans-serif;
                     margin: 10px 15px 0 0;
@@ -104,6 +105,12 @@ a
                 right: 15px;
                 color: #eee;
                 font-weight: bold; 
+    .nav-toggle
+        display: none;
+        align-self: center;
+        color: #fff;
+        font-size: 22pt;
+        margin: 20px 5px 0 0;
     &.rearrange
         & > .container
             width: 50%;
@@ -116,9 +123,41 @@ a
                         justify-content: center;
                     .phone
                         right: 40%;
-                        top: 0;
+                        top: -10px;
     &.mobile
-        background: green;
+        overflow: initial;
+        .nav-toggle
+            display: flex;
+        header
+            position: initial;
+            .wrapper
+                .nav
+                    flex-direction: column;
+                    top: 100%;
+                    right: 1%;
+                    width: 20%;
+                    background: #888888;
+                    position: absolute;
+                    border-radius: 0 0 5px 5px;
+                    border: 1px solid #555;
+                    border-top: none;
+                    height: 0;
+                    overflow: hidden;
+                    &.active
+                        height: 130px;
+                    li
+                        width: 100%;
+                        margin: 0 auto;
+                        text-align: center;
+                        &:last-child
+                            a
+                                padding-bottom: 12px;
+                        a
+                            padding: 7px;
+                            &:hover
+                                background: darken(#888888, 5%);
+                                cursor: pointer;
+                                transform: scale(1);
 
 .content-wrapper
     margin-top: 128px;

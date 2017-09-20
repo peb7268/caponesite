@@ -123,7 +123,8 @@ a {
             text-transform: capitalize; }
       .header-wrapper header .wrapper .nav {
         display: flex;
-        align-items: center; }
+        align-items: center;
+        transition: height 350ms ease-in-out; }
         .header-wrapper header .wrapper .nav li {
           font-family: 'Open Sans', sans-serif;
           margin: 10px 15px 0 0;
@@ -141,6 +142,12 @@ a {
         right: 15px;
         color: #eee;
         font-weight: bold; }
+  .header-wrapper .nav-toggle {
+    display: none;
+    align-self: center;
+    color: #fff;
+    font-size: 22pt;
+    margin: 20px 5px 0 0; }
   .header-wrapper.rearrange > .container {
     width: 50%; }
     .header-wrapper.rearrange > .container header .wrapper {
@@ -151,9 +158,39 @@ a {
         justify-content: center; }
       .header-wrapper.rearrange > .container header .wrapper .phone {
         right: 40%;
-        top: 0; }
+        top: -10px; }
   .header-wrapper.mobile {
-    background: green; }
+    overflow: initial; }
+    .header-wrapper.mobile .nav-toggle {
+      display: flex; }
+    .header-wrapper.mobile header {
+      position: initial; }
+      .header-wrapper.mobile header .wrapper .nav {
+        flex-direction: column;
+        top: 100%;
+        right: 1%;
+        width: 20%;
+        background: #888888;
+        position: absolute;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid #555;
+        border-top: none;
+        height: 0;
+        overflow: hidden; }
+        .header-wrapper.mobile header .wrapper .nav.active {
+          height: 130px; }
+        .header-wrapper.mobile header .wrapper .nav li {
+          width: 100%;
+          margin: 0 auto;
+          text-align: center; }
+          .header-wrapper.mobile header .wrapper .nav li:last-child a {
+            padding-bottom: 12px; }
+          .header-wrapper.mobile header .wrapper .nav li a {
+            padding: 7px; }
+            .header-wrapper.mobile header .wrapper .nav li a:hover {
+              background: #7b7b7b;
+              cursor: pointer;
+              transform: scale(1); }
 
 .content-wrapper {
   margin-top: 128px; }

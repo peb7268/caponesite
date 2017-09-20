@@ -13,6 +13,7 @@ function init(){
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
     $('.nav li a').on('click', scrollToElem);
+    $('.nav-toggle').on('click', toggleNav);
     $('.btt').on('click', scrollToTop);
 
     if(isMobile === false) bindScrollEvents();
@@ -21,9 +22,14 @@ function bindEvents(){
 
 function bindScrollEvents(){
     $(window).scroll(() => {
-        rearrangeHeader('.header-wrapper', $(window).scrollTop());
+        //rearrangeHeader('.header-wrapper', $(window).scrollTop());
         fixElemToContainer('.home-sidebar', '.testimonials'); 
     }).trigger('scroll');
+}
+
+function toggleNav(evt){
+    evt.preventDefault();
+    $('.nav').toggleClass('active');
 }
 
 function rearrangeHeader(sel, scrollTop){
