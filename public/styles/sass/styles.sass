@@ -45,79 +45,91 @@ a
         top: 0;
         z-index: 5;
         opacity: 0.1;
-    //dark to light linear
-    // background: rgb(119,119,119); /* Old browsers */
-    // background: -moz-linear-gradient(top, rgba(119,119,119,1) 0%, rgba(153,153,153,1) 100%); /* FF3.6-15 */
-    // background: -webkit-linear-gradient(top, rgba(119,119,119,1) 0%,rgba(153,153,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    // background: linear-gradient(to bottom, rgba(119,119,119,1) 0%,rgba(153,153,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
-    
+            
     & > .container
         margin: 20px auto 15px;
         z-index: 10;
+        transition: all 350ms ease-in-out;
 
-header
-    position: relative;
-    margin: 0 0 15px;
-    .wrapper
-        display: flex;
-        justify-content: space-between;
-        .logo-text
+    header
+        position: relative;
+        margin: 0 0 15px;
+        .wrapper
             display: flex;
-            flex-direction: column;
-            margin: 0; //0 0 0 50px;
+            justify-content: space-between;
+            transition: all 350ms ease-in-out;
+            
+            .logo-text
+                display: flex;
+                flex-direction: column;
+                margin: 0; //0 0 0 50px;
 
-            & > span
-                font-family: 'Oswald', sans-serif;
-                font-size: 11pt;
-                letter-spacing: -1px;
-                color: #333;
-                text-transform: capitalize;
-
-            a.logo
-                font-weight: 700;
-                color: $primary;
-                display: inline-block;
-                padding: 10px 10px 10px 2px;
-                border-radius: 5px;
-                margin: 0 10px -9px 0;
-                h1
+                & > span
                     font-family: 'Oswald', sans-serif;
-                    font-size: 40pt;
+                    font-size: 11pt;
                     letter-spacing: -1px;
-                    text-transform: capitalize;
-        .nav
-            display: flex;
-            align-items: center;
-            li
-                font-family: 'Open Sans', sans-serif;
-                margin: 10px 15px 0 0;
-                font-weight: bold;
-                a
                     color: #333;
-                    transition: all 150ms ease-in-out;
-                    transform: scale(1);
-                    display: block;
-                a:hover, a.active
+                    text-transform: capitalize;
+
+                a.logo
+                    font-weight: 700;
                     color: $primary;
-                    transform: scale(1.2);
-        .phone
-            position: absolute;
-            right: 15px;
-            color: #eee;
+                    display: inline-block;
+                    padding: 10px 10px 10px 2px;
+                    border-radius: 5px;
+                    margin: 0 10px -9px 0;
+                    h1
+                        font-family: 'Oswald', sans-serif;
+                        font-size: 40pt;
+                        letter-spacing: -1px;
+                        text-transform: capitalize;
+
+            .nav
+                display: flex;
+                align-items: center;
+                li
+                    font-family: 'Open Sans', sans-serif;
+                    margin: 10px 15px 0 0;
+                    font-weight: bold;
+                    a
+                        color: #333;
+                        transition: all 150ms ease-in-out;
+                        transform: scale(1);
+                        display: block;
+                    a:hover, a.active
+                        color: $primary;
+                        transform: scale(1.2);
+            .phone
+                position: absolute;
+                right: 15px;
+                color: #eee;
+                font-weight: bold; 
+    &.rearrange
+        & > .container
+            width: 50%;
+            header
+                .wrapper
+                    flex-direction: column;
+                    .logo-text
+                        align-items: center;
+                    .nav
+                        justify-content: center;
+                    .phone
+                        right: 40%;
+                        top: 0;
+    &.mobile
+        background: green;
 
 .content-wrapper
     margin-top: 128px;
     & > .banner
         position: relative;
-        height: 500px;
         background: #333;
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
         box-shadow: inset 0px 0px 145px #000;
         overflow: hidden;
         img
-            position: absolute;
             max-width: 100%;
             top: 0;
             left: 0;
@@ -318,6 +330,8 @@ header
         background: #000;
         color: #fff;
         margin: 0 15px 0 0;
+        img
+            max-width: 100%;
 
 .btt
     position: fixed;
@@ -329,3 +343,5 @@ header
     z-index: 10;
     &:hover
         cursor: pointer;
+
+@import 'mediaqueries';

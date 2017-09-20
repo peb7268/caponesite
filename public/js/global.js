@@ -5,18 +5,54 @@
 
 
 function init(){
+    window.isMobile = false;
     bootstrapSlider();
     bindEvents();
 }
 
 function bindEvents(){
+    $(window).on('resize', toggleCapabilities);
     $('.nav li a').on('click', scrollToElem);
     $('.btt').on('click', scrollToTop);
 
-    //only run this on desktop
-    $(window).scroll(() => { 
+    if(isMobile === false) bindScrollEvents();
+    $(window).trigger('resize');
+}
+
+function bindScrollEvents(){
+    $(window).scroll(() => {
+        rearrangeHeader('.header-wrapper', $(window).scrollTop());
         fixElemToContainer('.home-sidebar', '.testimonials'); 
     }).trigger('scroll');
+}
+
+function rearrangeHeader(sel, scrollTop){
+    console.log(scrollTop);    
+    if(scrollTop > 200) return $(sel).addClass('rearrange');
+    $(sel).removeClass('rearrange');
+}
+
+function toggleCapabilities(evt){
+    var outerWidth    = $(window).outerWidth();
+    var touchDetected = (Modernizr.touchevents);
+    var _isMobile     = (outerWidth < 960 || touchDetected);
+
+    window.isMobile = (_isMobile) ? true : false;
+    
+    if(_isMobile){ activateMobile(); } else { deactivateMobile(); }
+}
+
+function activateMobile(){
+    $(window).off('scroll');
+    $('.home-sidebar').removeAttr('style');
+    $('.header-wrapper').addClass('mobile');
+}
+
+function deactivateMobile(){
+    $('.header-wrapper').removeClass('mobile');
+    $(window).off('scroll');
+    $('.home-sidebar').removeAttr('style');
+    bindScrollEvents();
 }
 
 function fixElemToContainer(sel, relativeToSel){
@@ -31,14 +67,35 @@ function fixElemToContainer(sel, relativeToSel){
             $elem.animate({
                 'top': scrollPos
             }, 25); 
-        }, 300);
+        }, 150);
     }
 }
 
 function bootstrapSlider(){
     $('.folio').slick({
         infinite: true,
-        slidesToShow: 4
+        slidesToShow: 4,
+        responsive: [
+            {
+              breakpoint: 960,
+              settings: {
+                slidesToShow: 3,
+                infinite: true
+              }
+            },
+            {
+              breakpoint: 745,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                  slidesToShow: 1
+                }
+              },
+        ]
       });
 }
 
