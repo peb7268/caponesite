@@ -14,4 +14,29 @@
       .content-container.container.band .home-sidebar form {
         margin-bottom: 45px; }
     .content-container.container.band .home-content {
-      border-top: 1px solid #152232; } }
+      border-top: 1px solid #152232; }
+  body > .content-wrapper .banner {
+    height: 275px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 0 0 10px;
+    overflow: hidden;
+    width: 100%;
+    align-items: center; }
+    body > .content-wrapper .banner img {
+      max-width: 665px;
+      position: absolute;
+      z-index: 10; }
+    body > .content-wrapper .banner .cta {
+      display: flex;
+      position: relative;
+      z-index: 20;
+      flex-direction: column;
+      margin: 0 0 45px;
+      width: 95%;
+      align-items: center;
+      right: initial;
+      bottom: initial; }
+      body > .content-wrapper .banner .cta h2 {
+        font-size: 17pt; } }

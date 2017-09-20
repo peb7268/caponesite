@@ -28,7 +28,7 @@ function bindScrollEvents(){
 }
 
 function toggleNav(evt){
-    evt.preventDefault();
+    if(typeof evt !== 'undefined') evt.preventDefault();
     $('.nav').toggleClass('active');
 }
 
@@ -107,6 +107,7 @@ function bootstrapSlider(){
 
 function scrollToElem(evt){
     evt.preventDefault();
+    toggleNav();
     $(this).parent().parent().find('li a.active').removeClass('active');
     $(this).addClass('active');
 

@@ -107,10 +107,9 @@ a
                 font-weight: bold; 
     .nav-toggle
         display: none;
-        align-self: center;
         color: #fff;
         font-size: 22pt;
-        margin: 20px 5px 0 0;
+
     &.rearrange
         & > .container
             width: 50%;
@@ -127,15 +126,19 @@ a
     &.mobile
         overflow: initial;
         .nav-toggle
-            display: flex;
+            display: block;
+            position: absolute;
+            right: 8%;
+            top: 40%;
         header
             position: initial;
             .wrapper
+                justify-content: center;
                 .nav
                     flex-direction: column;
-                    top: 100%;
-                    right: 1%;
-                    width: 20%;
+                    top: 99%;
+                    right: 25%;
+                    width: 50%;
                     background: #888888;
                     position: absolute;
                     border-radius: 0 0 5px 5px;
