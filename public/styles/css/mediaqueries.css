@@ -6,7 +6,7 @@
     flex-direction: column-reverse; }
     .content-container.container.band .home-content, .content-container.container.band .home-sidebar {
       display: block;
-      width: 95%;
+      width: 90%;
       margin: 0 auto;
       padding: 25px 0 35px; }
     .content-container.container.band .home-sidebar {
@@ -39,4 +39,9 @@
       right: initial;
       bottom: initial; }
       body > .content-wrapper .banner .cta h2 {
-        font-size: 17pt; } }
+        font-size: 17pt; }
+  .header-wrapper img.hbg {
+    top: -15px;
+    width: 360%; }
+  .testimonials span.quote {
+    display: none; } }

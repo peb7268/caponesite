@@ -63,7 +63,7 @@ function deactivateMobile(){
 
 function fixElemToContainer(sel, relativeToSel){
     var $elem       = $(sel);
-    var offset      = $(relativeToSel).offset().top - ($('.header-wrapper').outerHeight() - 80);   //account for fixed header
+    var offset      = $(relativeToSel).offset().top - ($('.header-wrapper').outerHeight() - 40);   //account for fixed header
     var scrollPos   = $(window).scrollTop() - offset;
     var toTop       = $(window).scrollTop();
     
@@ -110,11 +110,12 @@ function scrollToElem(evt){
     toggleNav();
     $(this).parent().parent().find('li a.active').removeClass('active');
     $(this).addClass('active');
+    var offset = -($('.header-wrapper').outerHeight());
 
     var $elem = $(evt.target.getAttribute('href'));
     $(window).scrollTo($elem, 800, {
         onAfter: showBttBtn,
-        offset: -145
+        'offset': offset
     });
 }
 

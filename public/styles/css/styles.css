@@ -85,16 +85,16 @@ a {
     display: block;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -25px;
     z-index: 5;
     opacity: 0.1; }
   .header-wrapper > .container {
-    margin: 20px auto 15px;
+    margin: 10px auto 20px;
     z-index: 10;
     transition: all 350ms ease-in-out; }
   .header-wrapper header {
     position: relative;
-    margin: 0 0 15px; }
+    margin: 0; }
     .header-wrapper header .wrapper {
       display: flex;
       justify-content: space-between;
@@ -196,7 +196,7 @@ a {
                 transform: scale(1); }
 
 .content-wrapper {
-  margin-top: 128px; }
+  margin-top: 105px; }
   .content-wrapper > .banner {
     position: relative;
     background: #333;
@@ -213,8 +213,8 @@ a {
       transition: filter, opacity 500ms; }
     .content-wrapper > .banner .cta {
       position: absolute;
-      right: 7%;
-      bottom: 25%; }
+      right: 10%;
+      bottom: 30%; }
       .content-wrapper > .banner .cta h2 {
         color: #fff;
         text-transform: capitalize;
@@ -285,10 +285,9 @@ a {
           font-family: 'Passion One', cursive;
           transform: scale(-1, 1);
           position: absolute;
-          top: 0;
-          left: 0; }
+          top: -30px;
+          left: -50px; }
         .content-container.band .home-content .testimonials:nth-child(1) {
-          padding: 35px 0 0 45px;
           position: relative; }
       .content-container.band .home-content h4 {
         color: #fff;
@@ -418,7 +417,7 @@ a {
     flex-direction: column-reverse; }
     .content-container.container.band .home-content, .content-container.container.band .home-sidebar {
       display: block;
-      width: 95%;
+      width: 90%;
       margin: 0 auto;
       padding: 25px 0 35px; }
     .content-container.container.band .home-sidebar {
@@ -451,4 +450,9 @@ a {
       right: initial;
       bottom: initial; }
       body > .content-wrapper .banner .cta h2 {
-        font-size: 17pt; } }
+        font-size: 17pt; }
+  .header-wrapper img.hbg {
+    top: -15px;
+    width: 360%; }
+  .testimonials span.quote {
+    display: none; } }
