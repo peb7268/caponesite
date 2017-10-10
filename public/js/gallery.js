@@ -223,7 +223,10 @@ function bindGalleryEvents(){
 }
 
 function initGallery(){
-    $('#content').show();
+    $('#content').css({
+        'visibility': 'none',
+        'display': 'flex'
+    }).show();
     bindGalleryEvents();
 }
 

@@ -483,7 +483,9 @@ span#loading {
   left: 0px;
   background-color: #111;
   overflow-y: scroll;
-  display: none; }
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 #content img {
   float: left;
