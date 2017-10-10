@@ -56,71 +56,63 @@ function toggleGallerySource(evt){
     $theImage.attr('src', $this.attr('alt'));
 
     window.setTimeout(() => {
-        loadResult($theImage);
+        loadResult($theImage, $this);
     }, delay)
 }
 
-function loadResult($theImage){
+function toggleGalleryState(evt){
+    var $activeImg = $('#wrapper > img');
+    if($activeImg.length > 0){
+        $activeImg.addClass('dormant');
+        window.setTimeout(()=>{
+            $activeImg.remove();
+        }, 300);
+    }
+    $('#thumbsWrapper, #panel, .infobar, .infobar .close').toggleClass('active');
+    $('#description').empty();
+    $('#prev, #next').hide();
+    current = 0;
+}
+
+//Load's the result of clicking on the img thumb
+function loadResult($theImage, $target){
    $('#loading').hide();
    if($('#wrapper').find('img').length) return;
 
-   current++;
+   current = ($target.index() > -1) ? $target.index() : 0;
 
-   /*
-   After it's loaded we hide the loading icon
-   and resize the image, given the window size;
-   then we append the image to the wrapper
-   */
    resize($theImage);
-
    $('#wrapper').append($theImage);
-
-   /* make its opacity animate */
-   $theImage.fadeIn(800);
+   $theImage.fadeIn(250);
    
-   /* and finally slide up the panel */
-   $('#panel').animate({'height':'100%'},speed,function(){
-       /*
-       if the picture has a description,
-       it's stored in the title attribute of the thumb;
-       show it if it's not empty
-           */
-       var title = $theImage.attr('title');
-       if(title != '') 
-           $('#description').html(title).show();
-       else 
-           $('#description').empty().hide();
-       
-       /*
-       if our picture is the first one,
-       don't show the "previous button"
-       for the slideshow navigation;
-       if our picture is the last one,
-       don't show the "next button"
-       for the slideshow navigation
-           */
-       if(current == 0)
-           $('#prev').hide();
-       else
-           $('#prev').css({
-            'display': 'flex',
-            'visibility': 'none'
-           }).fadeIn();
-       if(current==parseInt(totalpictures-1))
-           $('#next').hide();
-       else
-            //change to css fadeIn with a delay, just add a class
-           $('#next').css({
-            'display': 'flex',
-            'visibility': 'none'
-           }).fadeIn();
-       /*
-       we set the z-index and height of the thumbs wrapper 
-       to 0, because we want to slide it up afterwards,
-       when the user clicks the large image
-           */
-       $('#thumbsWrapper').css({'z-index':'0','height':'0px'});
-   });
+   $('#panel, .infobar, .infobar .close').addClass('active'); //activate the elements (slide up and fade in stuff)
+   
+    //Add the caption to the infobar
+    var title = $target.attr('title');
+    if(title != '') 
+        $('#description').html(title).show();
+    else 
+        $('#description').empty().hide();
+    
+    //Nav Controls
+    toggleNavControls(current, totalpictures);
+    
+    //slide the thumbs wrapper up
+    $('#thumbsWrapper').addClass('dormant');
+}
+
+function toggleNavControls(current, totalpictures){
+    if(current == 0) {
+        hideBtn($('#prev'));
+    } else {
+        showBtn($('#prev'));
+    }
+
+    if(current === parseInt(totalpictures-1)){
+        hideBtn($('#next'));
+    } else {
+        showBtn($('#next'));
+    }
 }
 
 function callResize(){
@@ -175,27 +167,13 @@ function transitionImage(evt, $nextimage, dir){
             $('#description').empty().hide();
 
         if(current==0)
-            $('#prev')
-            .css("display", "flex")
-            .hide();
+            hideBtn($('#prev'));
         else
-            $('#prev')
-            .css({
-                "visibility": "none",
-                "display":"flex"
-            })
-            .show();
+            showBtn($('#prev'));
         if(current==parseInt(totalpictures-1))
-            $('#next')
-            .css("display", "flex")
-            .hide();
+            hideBtn($('#next'));
         else
-            $('#next')
-            .css({
-                "visibility": "none",
-                "display":"flex"
-            })
-            .show();
+            showBtn($('#next'));
     });
     /*
     increase or decrease the current variable
@@ -206,27 +184,27 @@ function transitionImage(evt, $nextimage, dir){
         --current;
 }
 
-function toggleGalleryState(evt){
-    var $this = $(evt.target);
-    $('#description').empty().hide();
-    
-    $('#thumbsWrapper').css('z-index','10')
-    .stop()
-    .animate({'height':'100%'},speed,function(){
-        var $theWrapper = $(this);
-        $('#panel').css('height','0px');
-        $theWrapper.css('z-index','0');
-        /* 
-        remove the large image element
-        and the navigation buttons
-         */
-        $this.remove();
-        $('#prev').hide();
-        $('#next').hide();
-    });
+function hideBtn($btn){
+    $btn
+    .css("display", "flex")
+    .hide();
+}
+
+function showBtn($btn){
+    $btn
+    .css({
+        "visibility": "none",
+        "display":"flex"
+    })
+    .show();
 }
 
 function bindGalleryEvents(){
+    $(document).on('keyup', (evt)=> {
+        if(evt.which !== 27) return;
+        toggleGalleryState(evt);
+    });
+
     $(window).on('resize', callResize);
 
     $('#content > img').on('click', function(evt){ toggleGallerySource(evt); });
@@ -239,7 +217,7 @@ function bindGalleryEvents(){
         $this.stop().animate({'opacity':'0.4'},200);
     });
 
-    $('#wrapper > img').on('click', function(evt){ toggleGalleryState(evt); });
+    $('.close').on('click', toggleGalleryState);
     $('#next').on('click', function(evt){ navigateNext(evt) });
     $('#prev').on('click', function(evt){ navigatePrev(evt) });
 }
