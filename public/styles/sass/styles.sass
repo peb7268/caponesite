@@ -64,13 +64,6 @@ a
                 flex-direction: column;
                 margin: 0; //0 0 0 50px;
 
-                & > span
-                    font-family: 'Oswald', sans-serif;
-                    font-size: 11pt;
-                    letter-spacing: -1px;
-                    color: #333;
-                    text-transform: capitalize;
-
                 a.logo
                     font-weight: 700;
                     color: $primary;
@@ -82,7 +75,25 @@ a
                         font-family: 'Oswald', sans-serif;
                         font-size: 40pt;
                         letter-spacing: -1px;
-                        text-transform: capitalize;
+                        & > span
+                            font-family: 'Oswald', sans-serif;
+                            // font-size: 11pt;
+                            letter-spacing: -1px;
+                            color: #333;
+                            text-transform: lowercase;
+                            display: inline-block;
+                            overflow: hidden;
+                            margin: 0 10px 0 0;
+                            transition: all 250ms;
+                            &:nth-child(1)
+                                width: 43px;
+                            &:nth-child(2)
+                                width: 192px;
+                            &:nth-child(3)
+                                width: 240px;
+                            &.collapsed
+                                width: 0;
+                                margin: 0;
 
             .nav
                 display: flex;
@@ -162,8 +173,11 @@ a
                                 cursor: pointer;
                                 transform: scale(1);
 
+.gallery .header-wrapper header .wrapper .nav li:nth-child(3) a
+    color: $primary;
+
 .content-wrapper
-    margin-top: 105px;
+    margin-top: 97px;
     & > .banner
         position: relative;
         background: #333;
@@ -384,5 +398,114 @@ a
     z-index: 10;
     &:hover
         cursor: pointer;
+
+//Gallery
+.content-wrapper.gallery
+    width: 95%;
+    margin: 150px auto 100px;
+
+.infobar
+    background: #000;
+    height: 28px;
+    line-height: 28px;
+    right: 20px;
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    z-index: 999999999;
+    text-align: center;
+    color: #ddd;
+    border-radius: 10px 10px 0px 0px;
+    text-shadow: 0px 0px 1px #ccc;
+
+
+span#description
+    text-shadow: 1px 1px 1px #000;
+    display: none;
+
+span#loading
+    display: none;
+    padding-right: 30px;
+    background: transparent url(../../img/loading.gif) no-repeat center right;
+
+#thumbsWrapper
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 110px;
+
+#content
+   position: absolute;
+   top: 0px;
+   height: 100%;
+   width: 100%;
+   left: 0px;
+   background-color: #111;
+   overflow-y: scroll;
+   display: none;
+
+#content img
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+
+.placeholder
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 30px;
+
+#panel
+    background-color: #222;
+    width: 100%;
+    position: fixed;
+    top: 110px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 0px;
+    text-align: center;
+
+#panel img
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #000;
+    -moz-box-shadow: 0px 0px 10px #111;
+    -webkit-box-shadow: 0px 0px 10px #111;
+    box-shadow: 0px 0px 10px #111;
+    display: none;
+
+#wrapper
+    position: relative;
+    margin: 40px auto 0px auto;
+a#next,
+a#prev
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+    display: none;
+    background: #aaa url(../../img/nav.png) no-repeat top left;
+a#next:hover, a#prev:hover
+    background-color: #fff;
+a#next
+    right: 0px;
+    top: 50%;
+    margin-top: -20px;
+    background-position: 0px 0px;
+
+a#prev
+    left: 0px;
+    top: 50%;
+    margin-top: -20px;
+    background-position: 0px -40px;
+ 
 
 @import 'mediaqueries';

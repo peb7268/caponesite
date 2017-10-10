@@ -8,6 +8,7 @@ function init(){
     window.isMobile = false;
     bootstrapSlider();
     bindEvents();
+    collapseLogo();
 }
 
 function bindEvents(){
@@ -21,10 +22,17 @@ function bindEvents(){
 }
 
 function bindScrollEvents(){
+    if($('.home-sidebar').length == 0) return;
     $(window).scroll(() => {
         //rearrangeHeader('.header-wrapper', $(window).scrollTop());
         fixElemToContainer('.home-sidebar', '.testimonials'); 
     }).trigger('scroll');
+}
+
+function collapseLogo(){
+    window.setTimeout(()=> {
+        $('.logo h1 span').addClass('collapsed');
+    }, 1500);
 }
 
 function toggleNav(evt){
@@ -78,6 +86,8 @@ function fixElemToContainer(sel, relativeToSel){
 }
 
 function bootstrapSlider(){
+    if($('.folio').length === 0) return;
+
     $('.folio').slick({
         infinite: true,
         slidesToShow: 4,
@@ -107,6 +117,11 @@ function bootstrapSlider(){
 
 function scrollToElem(evt){
     evt.preventDefault();
+    if(evt.target.href.indexOf('gallery') > -1) {
+        window.location.href = evt.target.getAttribute('href');
+        return false;
+    }
+
     toggleNav();
     $(this).parent().parent().find('li a.active').removeClass('active');
     $(this).addClass('active');

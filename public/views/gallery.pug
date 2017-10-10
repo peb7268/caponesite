@@ -1,0 +1,32 @@
+//- index.pug
+extends layout.pug
+
+block styles
+        link(rel="stylesheet", href="/styles/css/styles.css")
+        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick.css")
+        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick-theme.css")
+
+
+
+block content
+    .content-wrapper.gallery
+        div.infobar
+            span#description
+            span#loading Loading Image
+        div#thumbsWrapper
+            div#content
+                img(src="./img/projects/thumbs/decks/1.jpg", alt="./img/projects/decks/1.jpg",title="something")
+                img(src="./img/projects/thumbs/decks/2.jpg", alt="./img/projects/decks/2.jpg",title="something")
+                img(src="./img/projects/thumbs/decks/3.jpg", alt="./img/projects/decks/3.jpg",title="something")
+                img(src="./img/projects/thumbs/decks/4.jpg", alt="./img/projects/decks/4.jpg",title="something")
+                
+                div.placeholder
+        div#panel
+            div#wrapper
+                a#prev
+                a#next
+
+block bodyscripts
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src='/js/gallery.js')
+    script(src='/js/global.js')
