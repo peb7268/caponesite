@@ -102,11 +102,18 @@ function loadResult($theImage){
        if(current == 0)
            $('#prev').hide();
        else
-           $('#prev').fadeIn();
+           $('#prev').css({
+            'display': 'flex',
+            'visibility': 'none'
+           }).fadeIn();
        if(current==parseInt(totalpictures-1))
            $('#next').hide();
        else
-           $('#next').fadeIn();
+            //change to css fadeIn with a delay, just add a class
+           $('#next').css({
+            'display': 'flex',
+            'visibility': 'none'
+           }).fadeIn();
        /*
        we set the z-index and height of the thumbs wrapper 
        to 0, because we want to slide it up afterwards,
@@ -168,13 +175,27 @@ function transitionImage(evt, $nextimage, dir){
             $('#description').empty().hide();
 
         if(current==0)
-            $('#prev').hide();
+            $('#prev')
+            .css("display", "flex")
+            .hide();
         else
-            $('#prev').show();
+            $('#prev')
+            .css({
+                "visibility": "none",
+                "display":"flex"
+            })
+            .show();
         if(current==parseInt(totalpictures-1))
-            $('#next').hide();
+            $('#next')
+            .css("display", "flex")
+            .hide();
         else
-            $('#next').show();
+            $('#next')
+            .css({
+                "visibility": "none",
+                "display":"flex"
+            })
+            .show();
     });
     /*
     increase or decrease the current variable
