@@ -120,7 +120,7 @@ function callResize(){
     if($picture.length > 0) resize($picture);
 }
 
-function navigate($nextimage, dir, nextCurrent){
+function navigateGallery($nextimage, dir, nextCurrent){
     if(dir=='left' && current==0) return;
     if(dir=='right' && current==parseInt(totalpictures-1)) return;
 
@@ -136,13 +136,13 @@ function navigate($nextimage, dir, nextCurrent){
 function navigateNext(evt){
     var $this           = $(evt.target);
     var $nextimage 		= $('#content img').eq((current + 1));
-    navigate($nextimage,'right', (current + 1));
+    navigateGallery($nextimage,'right', (current + 1));
 }
 
 function navigatePrev(evt){
     var $this           = $(evt.target);
     var $previmage 		= $('#content img:nth-child('+parseInt(current)+')');
-    navigate($previmage,'left', (current - 1));
+    navigateGallery($previmage,'left', (current - 1));
 }
 
 function transitionImage(evt, $nextimage, dir){
