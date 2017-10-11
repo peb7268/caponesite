@@ -9,11 +9,15 @@ function init(){
     bootstrapSlider();
     bindEvents();
     collapseLogo();
+    resumeNav();
 }
 
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
-    $('.nav li a').on('click', scrollToElem);
+    $('.nav li a').on('click', function(evt){
+        evt.preventDefault();
+        navigate(evt);
+    });
     $('.nav-toggle').on('click', toggleNav);
     $('.btt').on('click', scrollToTop);
 
@@ -115,8 +119,33 @@ function bootstrapSlider(){
       });
 }
 
+function navigate(evt){
+    evt.preventDefault();
+    if(window.location.href.indexOf('gallery') > -1) {
+        var href = evt.target.getAttribute('href').split('#')[1];
+        window.location.href = `${window.location.protocol}//${window.location.host}/?loc=${href}`;
+    }
+    scrollToElem(evt);
+}
+
+function resumeNav(){
+    var anchors = ['about', 'services', 'contact']; 
+    var params  = window.location.search.split('=');
+    params.splice(0, 1);
+    var target = params[0];
+
+    if(anchors.includes(target)) {
+        var evt = {};
+        evt.preventDefault = function(){};
+        evt.target = {'href': target};
+        evt.target.getAttribute = function(){ return `#${this.href}`; }
+        navigate(evt);
+    }
+}
+
 function scrollToElem(evt){
     evt.preventDefault();
+    debugger;
     if(evt.target.href.indexOf('gallery') > -1) {
         window.location.href = evt.target.getAttribute('href');
         return false;
