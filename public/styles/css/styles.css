@@ -293,7 +293,8 @@ a {
       .content-container.band .home-content p {
         color: #b9d9ff; }
       .content-container.band .home-content .testimonials {
-        margin: 0 0 25px 0; }
+        margin: 0 0 25px 0;
+        height: 55px; }
         .content-container.band .home-content .testimonials .quote {
           font-size: 75pt;
           font-family: 'Passion One', cursive;

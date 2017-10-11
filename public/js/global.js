@@ -4,12 +4,53 @@
 })(jQuery)
 
 
+var testimonials = [
+    {quote: 'We hired them to do a privacy fence, and they were very responsive and had it up within a week of booking the job.'},
+    {quote: 'It was also a pleasure to work through Ovi who responded to all our calls, emails and worries.'},
+    {quote: 'We contacted 4th Generation Construction as part of a 3 bid review process for a new fence, patio extension and pergola.'},
+    {quote: 'Fantastic service and quality! Ovi is vey helpful and explains eveything. We had our roofdeck built which was a difficult job that his team finished up in a couple days. Very happy with it and highly reccommend using them.'}
+]
+
 function init(){
     window.isMobile = false;
     bootstrapSlider();
     bindEvents();
     collapseLogo();
     resumeNav();
+    rotateTestimonials(testimonials);
+}
+
+function getRandomNumber(previousNumber, floor, ceil){
+    if(previousNumber == null) return Math.floor(Math.random() * ceil);
+    var randomIdx = Math.floor(Math.random() * ceil);
+
+    if(randomIdx === previousNumber) {
+        return getRandomNumber(previousNumber, floor, ceil);
+    }
+    
+    return randomIdx;
+}
+
+function rotateTestimonials(testimonials){
+    var $container = $('.testimonials .container');
+    if($container.length == 0) return;
+
+    var testimonialIdx = getRandomNumber(null, 0, testimonials.length);
+    $container.html(testimonials[testimonialIdx].quote);
+
+    window.setInterval(() => {
+        changeTestimonial($container, testimonials, testimonialIdx)
+    }, 5500);
+}
+
+function changeTestimonial($container, testimonials, testimonialIdx){
+    $container.fadeOut(250, () => {
+        $container.html('');
+        var newTestimonialIdx = getRandomNumber(testimonialIdx, 0, testimonials.length);
+        
+        $container.html(testimonials[newTestimonialIdx].quote);
+        $container.fadeIn(250);
+     });
 }
 
 function bindEvents(){
@@ -44,8 +85,7 @@ function toggleNav(evt){
     $('.nav').toggleClass('active');
 }
 
-function rearrangeHeader(sel, scrollTop){
-    console.log(scrollTop);    
+function rearrangeHeader(sel, scrollTop){    
     if(scrollTop > 200) return $(sel).addClass('rearrange');
     $(sel).removeClass('rearrange');
 }
@@ -145,7 +185,6 @@ function resumeNav(){
 
 function scrollToElem(evt){
     evt.preventDefault();
-    debugger;
     if(evt.target.href.indexOf('gallery') > -1) {
         window.location.href = evt.target.getAttribute('href');
         return false;
