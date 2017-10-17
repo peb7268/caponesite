@@ -77,7 +77,7 @@ function bindScrollEvents(){
 function collapseLogo(){
     window.setTimeout(()=> {
         $('.logo h1 span').addClass('collapsed');
-    }, 1500);
+    }, 7000);
 }
 
 function toggleNav(evt){
