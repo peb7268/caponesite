@@ -43,7 +43,9 @@ function resize($image){
             }
         }
     }
-    $image.css({'width':theImage.width+'px','height':theImage.height+'px'});
+
+    var stylying = {'width':theImage.width+'px','height':theImage.height+'px'};
+    //$image.css();
 }
 
 function toggleGallerySource(evt){
@@ -89,10 +91,11 @@ function loadResult($theImage, $target){
    
     //Add the caption to the infobar
     var title = $target.attr('title');
-    if(title != '') 
-        $('#description').html(title).show();
-    else 
+    if(title != '') {
+        //$('#description').html(title).show();
+    } else {
         $('#description').empty().hide();
+    }
     
     //Nav Controls
     toggleNavControls(current, totalpictures);
@@ -161,7 +164,7 @@ function transitionImage(evt, $nextimage, dir){
 
         var title = $nextimage.attr('title');
         if(title != ''){
-            $('#description').html(title).show();
+            //$('#description').html(title).show();
         }
         else
             $('#description').empty().hide();

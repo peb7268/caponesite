@@ -454,6 +454,7 @@ span#loading
     display: none;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px 0 100px 0;
 
 #content img
     float: left;
@@ -497,6 +498,7 @@ span#loading
     margin: 40px auto 0px auto;
     & > img
         transition: opacity 250ms;
+        max-width: 80%;
         &.dormant
             opacity: 0;
 a#next,
@@ -564,6 +566,8 @@ footer
             img
                 width: 150px;
                 height: 65px;
-
+.gallery
+    footer
+        display: none;
 
 @import 'mediaqueries';

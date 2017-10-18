@@ -479,7 +479,8 @@ span#loading {
   overflow-y: scroll;
   display: none;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  padding: 0px 0 100px 0; }
 
 #content img {
   float: left;
@@ -522,7 +523,8 @@ span#loading {
   position: relative;
   margin: 40px auto 0px auto; }
   #wrapper > img {
-    transition: opacity 250ms; }
+    transition: opacity 250ms;
+    max-width: 80%; }
     #wrapper > img.dormant {
       opacity: 0; }
 
@@ -593,6 +595,9 @@ footer {
         width: 150px;
         height: 65px; }
 
+.gallery footer {
+  display: none; }
+
 @media only screen and (max-width: 550px) {
   .content-container.container.slider {
     width: 85%; }
@@ -639,15 +644,14 @@ footer {
     top: -15px;
     width: 360%; }
   .testimonials span.quote {
-    display: none; } }
-
-footer {
-  display: block; }
-  footer div {
-    width: 90%;
-    display: block;
-    margin: 0 auto 30px; }
-    footer div h4 {
-      font-size: 16pt; }
-    footer div li, footer div p {
-      font-size: 12pt; }
+    display: none; }
+  footer {
+    display: block; }
+    footer div {
+      width: 90%;
+      display: block;
+      margin: 0 auto 30px; }
+      footer div h4 {
+        font-size: 16pt; }
+      footer div li, footer div p {
+        font-size: 12pt; } }

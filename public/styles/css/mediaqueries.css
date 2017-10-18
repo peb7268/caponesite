@@ -44,15 +44,14 @@
     top: -15px;
     width: 360%; }
   .testimonials span.quote {
-    display: none; } }
-
-footer {
-  display: block; }
-  footer div {
-    width: 90%;
-    display: block;
-    margin: 0 auto 30px; }
-    footer div h4 {
-      font-size: 16pt; }
-    footer div li, footer div p {
-      font-size: 12pt; }
+    display: none; }
+  footer {
+    display: block; }
+    footer div {
+      width: 90%;
+      display: block;
+      margin: 0 auto 30px; }
+      footer div h4 {
+        font-size: 16pt; }
+      footer div li, footer div p {
+        font-size: 12pt; } }
