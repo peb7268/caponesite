@@ -55,7 +55,7 @@ function changeTestimonial($container, testimonials, testimonialIdx){
 
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
-    $('.nav li a').on('click', function(evt){
+    $('.nav li a, .cta-btn').on('click', function(evt){
         evt.preventDefault();
         navigate(evt);
     });
