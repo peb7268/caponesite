@@ -95,18 +95,18 @@ block content
                     | We also offer permit expediting services as well.
                 
         .home-sidebar
-            form
+            form(type="post", class="contact-form")
                 h2#contact drop us a line
                 label First Name
-                    input(type="text")
+                    input(type="text", name="first-name")
                 label Last Name
-                    input(type="text")
+                    input(type="text",  name="last-name")
                 label Email
-                    input(type="text")
+                    input(type="email",  name="email")
                 label Phone
-                    input(type="text")
+                    input(type="phone",  name="phone")
                 label Job Description
-                    textarea
+                    textarea(name="desc")
                 button(type="submit") Submit
 
             | <i class="fa fa-chevron-circle-up btt" aria-hidden="true"></i>

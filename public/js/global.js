@@ -64,6 +64,16 @@ function bindEvents(){
 
     if(isMobile === false) bindScrollEvents();
     $(window).trigger('resize');
+    $('form').on('submit', postFormData);
+}
+
+function postFormData(evt){
+    evt.preventDefault();
+    $.post('/contact', {
+        data: {data: $(evt.target).serialize()}
+    }).then(function(resp){
+        debugger;
+    })
 }
 
 function bindScrollEvents(){
