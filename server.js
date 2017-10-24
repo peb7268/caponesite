@@ -61,8 +61,8 @@ app.post('/contact', (req, res)=>{
 		"from_email": 'ovi@4gconline.com',
 		"from_name": formData['first name'] + formData['last name'],
 		"to": [{
-				"email": "dev@imperativedesign.net",
-				"name": "Imperative Design",
+				"email": "ovi@4gconline.com",
+				"name": "4GC",
 				"type": "to"
 			}],
 		"headers": {
