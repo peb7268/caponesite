@@ -6,6 +6,7 @@ var path        	= require('path');
 var app         	= express();
 var mandrill 		= require('mandrill-api/mandrill');
 var process 		= require('process');
+var qs 				= require('querystring');
 
 //Middleware Configs
 app.use(express.static(__dirname + '/public'));
@@ -24,14 +25,14 @@ app.get('/gallery', (req, res) => res.render('gallery', {active_page: 'gallery'}
 //app.get('/about', (req, res) => res.render('about', {message: 'Great and nerdy things coming... stay tuned.', title: 'this is how you pass data from express to your views.', active_page: 'about-page'}));
 
 app.post('/contact', (req, res)=>{
-	let formData = req.body;
-	console.log('formData', formData);
+	let formData = qs.parse(req.body.data.data);
+	console.log('formData: ', formData);
 
 	let msg_html = `
-		<p>Name: ${formData['first name']} ${formData['last name']}</p>
+		<p>Name: ${formData['first-name']} ${formData['last-name']}</p>
 		<p>Email: ${formData['email']}</p>
 		<p>Phone: ${formData['phone']}</p>
-		<p>Reason for inquiry: ${formData['Reason for writing']}</p>
+		<p>Reason for inquiry: ${formData['desc']}</p>
 	`;
 	msg_html = msg_html.trim();
 
@@ -49,17 +50,15 @@ app.post('/contact', (req, res)=>{
 		}
 	}
 
-	console.log('MANDRILL_CONFIGS');
-	console.log(MANDRILL_CONFIGS);
 
 	var mandrill_client = new mandrill.Mandrill(MANDRILL_CONFIGS.options.auth.pass);
 
 	var message = {
 		"html": msg_html,
-		"text": formData['Reason for writing'],
+		"text": formData['desc'],
 		"subject": "site contact",
 		"from_email": 'ovi@4gconline.com',
-		"from_name": formData['first name'] + formData['last name'],
+		"from_name": formData['first-name'] + formData['last-name'],
 		"to": [{
 				"email": "ovi@4gconline.com",
 				"name": "4GC",
