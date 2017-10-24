@@ -43,11 +43,14 @@ app.post('/contact', (req, res)=>{
 		options: {
 			service: 'Mandrill',
 			auth: {
-				user: '4gconline.com',
+				user: '4th Generation Construction Inc.',
 				pass: process.env.MAIL_KEY
 			}
 		}
 	}
+
+	console.log('MANDRILL_CONFIGS');
+	console.log(MANDRILL_CONFIGS);
 
 	var mandrill_client = new mandrill.Mandrill(MANDRILL_CONFIGS.options.auth.pass);
 
