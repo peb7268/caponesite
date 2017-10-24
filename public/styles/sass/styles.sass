@@ -298,7 +298,23 @@ a
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                margin: 0 0 25px; 
+                margin: 0 0 25px;
+                &.error
+                    color: #9d0404;
+                    background: #ffc1c1;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    border: 1px solid #9d0404;
+                    line-height: 1.2;
+
+                &.success
+                    color: #055300;
+                    background: #d5ffd2;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    border: #055300;
+                    line-height: 1.2;
+
                 
                 label
                     margin: 0 0 20px;

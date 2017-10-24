@@ -329,6 +329,20 @@ a {
         display: flex;
         flex-direction: column;
         margin: 0 0 25px; }
+        .content-container.band .home-sidebar form.error {
+          color: #9d0404;
+          background: #ffc1c1;
+          padding: 10px;
+          box-sizing: border-box;
+          border: 1px solid #9d0404;
+          line-height: 1.2; }
+        .content-container.band .home-sidebar form.success {
+          color: #055300;
+          background: #d5ffd2;
+          padding: 10px;
+          box-sizing: border-box;
+          border: #055300;
+          line-height: 1.2; }
         .content-container.band .home-sidebar form label {
           margin: 0 0 20px;
           color: #efefef; }

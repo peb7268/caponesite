@@ -71,9 +71,19 @@ function postFormData(evt){
     evt.preventDefault();
     $.post('/contact', {
         data: {data: $(evt.target).serialize()}
-    }).then(function(resp){
-        debugger;
     })
+    .done(function(resp){
+        $('form').fadeOut(250, function(evt){
+            $(this).addClass('success').html('Your message has been submitted. We\'ll be in touch soon!');
+            $(this).fadeIn(250);
+        });
+    })
+    .fail(function(){
+        $('form').fadeOut(250, function(evt){
+            $(this).addClass('error').html('Oops there was an error, please submit your message to ovi@4gconline.com');
+            $(this).fadeIn(250);
+        });
+    });
 }
 
 function bindScrollEvents(){
