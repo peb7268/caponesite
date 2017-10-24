@@ -50,6 +50,7 @@ a
         margin: 10px auto 20px;
         z-index: 10;
         transition: all 350ms ease-in-out;
+        min-height: 75px;
 
     header
         position: relative;
@@ -63,6 +64,11 @@ a
                 display: flex;
                 flex-direction: column;
                 margin: 0; //0 0 0 50px;
+                opacity: 0;
+                transition: opacity 250ms ease-in;
+                transition-delay: 500ms;
+                &.fade-in
+                    opacity: 1;
 
                 a.logo
                     font-weight: 700;
@@ -140,8 +146,10 @@ a
                     .phone
                         right: 40%;
                         top: -10px;
-    &.mobile
+    &.mobile.full-wrapper
         overflow: initial;
+        header .wrapper .logo-text a.logo h1 > span
+            display: none;
         .nav-toggle
             display: block;
             position: absolute;

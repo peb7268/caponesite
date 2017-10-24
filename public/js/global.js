@@ -18,6 +18,12 @@ function init(){
     collapseLogo();
     resumeNav();
     rotateTestimonials(testimonials);
+    $('.logo-text').addClass('fade-in');
+    // window.setTimeout(() => {
+    //     $('.logo-text').animate({
+    //         'opacity': '1'
+    //     }, 250);
+    // })
 }
 
 function getRandomNumber(previousNumber, floor, ceil){
