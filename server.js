@@ -58,7 +58,7 @@ app.post('/contact', (req, res)=>{
 		"html": msg_html,
 		"text": formData['Reason for writing'],
 		"subject": "site contact",
-		"from_email": 'dev@imperativedesign.net',
+		"from_email": 'ovi@4gconline.com',
 		"from_name": formData['first name'] + formData['last name'],
 		"to": [{
 				"email": "dev@imperativedesign.net",
