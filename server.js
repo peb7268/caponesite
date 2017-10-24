@@ -5,6 +5,7 @@ var bodyParser 		= require('body-parser');
 var path        	= require('path');
 var app         	= express();
 var mandrill 		= require('mandrill-api/mandrill');
+var process 		= require('process');
 
 //Middleware Configs
 app.use(express.static(__dirname + '/public'));
@@ -43,7 +44,7 @@ app.post('/contact', (req, res)=>{
 			service: 'Mandrill',
 			auth: {
 				user: '4gconline.com',
-				pass: 'e4abfecf487fbfc5d626652019717bae-us17'
+				pass: process.env.MAIL_KEY
 			}
 		}
 	}
