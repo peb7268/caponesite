@@ -3,116 +3,11 @@ extends layout.pug
 
 block styles
         link(rel="stylesheet", href="/styles/css/styles.css")
-        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick.css")
-        link(rel="stylesheet", type="text/css", href="scripts/slick-carousel/slick/slick-theme.css")
-
-
 
 block content
     .content-wrapper
-        .banner
-            img(src="./img/banner1.jpg")
-            .cta
-                h2 jump start your next project
-                ul
-                    li
-                        a(href="/gallery") our work
-                    li
-                        a(href="#contact", class="cta-btn") get a quote
-    .content-container.container.slider
-        .folio
-            div.project
-                img(src="../../img/projects/resized/night_deck.jpg")
-            div.project
-                img(src="../../img/projects/resized/patio_grill.jpg")
-            div.project
-                img(src="../../img/projects/resized/rooftop_deck.jpg")
-            div.project
-                img(src="../../img/projects/resized/trex_deck.jpg")
-            div.project
-                img(src="../../img/projects/resized/pergola.jpg")
-            div.project
-                img(src="../../img/projects/resized/fence.jpg")
-
-    .content-container.container.band
-        div.home-content
-            .testimonials
-                h2 what people are saying
-                p 
-                    | <span class="quote">"</span>
-                    span.container
-            #about.section
-                h2 who we are
-                p 
-                    | 4th Generation Construction Inc (4GC) is a family owned and operated business 
-                    | that has been serving the Chicagoland area for decades. As a General Contractor, 
-                    | 4GC works very close with it's clients to provide the higherst level of service and 
-                    | quality for each project. Most of our projects, if not all, come from referrals from 
-                    | our satisfied clients.
-
-                p
-                    | 4GC provides a variety of services from a simple residentail repair to elaborate commercial rehabs.
-                    | We also specialize in wooden porches and decks.
-
-                p For a free quote, please give us a call today.
-                        
-            #services.section
-                h2 what we do
-                
-                h4 porches &amp; decks
-                p
-                    | We specialize in repairing and rebuilding single family and multi-unit building front wood porches
-                    | and stairs, rear wood porches, rear decks, balconies and roof-top deck structures with pressure-treated
-                    | yellow pine lumber, red cedar lumber, exotic woods (Ipe, Tigerwood...) and composite decking
-                    | materials (like Azek, Trex, Deckorators, Zuri, TimberTech, etc.).
-                
-                h4 pergolas, arbors, trellis &amp; privacy walls
-                p
-                    | We specilize in custom build garage-top or roof-top wood pergolas, arbors or trellis with a modern look or in a more traditional style. 
-                    | Most of our pergolas/arbors/tresllis are built out of red cedar lumber that comes in two difference finishes... rough sawn for a more rustic
-                    | look and a smooth cut for a more traditional style or softer appearance. Also we offer custom pergolas/arbors/trellis in 
-                    | pressure-treated yellow pine lumber as well.
-                
-                h4 wood fences &amp; gates
-                p
-                    | We repair and replace wood fences and gates in several design options. We can either replace a broken post or panel or completely install a new wood fence. 
-                    | The materials that we use are either pressure-treated yellow pine, or red cedar lumber.
-
-                h4 flat roofs
-                p
-                    | Since we repair and install roof decks we also offer roof repair and maintenance services for flat rubber roofs. In many cases repairs and maintenance is needed on an existing old roof before a new deck structure is installed.
-                    | Silver protective coating can increase the life of your roof significantly.
-                
-                h4 rehab
-                p
-                    | As a family construction company we offer complete rehabs. Either a bathroom or a basement or a complete home renovation we can provide all that is needed.
-                    | From hardwood floors and tiles to walls and painting, electrical, plumbing and HVAC we can do it all.
-
-                h4 architectural services
-                p
-                    | We offer complete architectural and design service for your deck and porch project or a complete home rehab.
-                    | We closely work with a licensed architect and designer to provide an accurate and detailed design in a timely matter.
-                    | We also offer permit expediting services as well.
-                
-        .home-sidebar
-            form(type="post", class="contact-form")
-                h2#contact drop us a line
-                label First Name
-                    input(type="text", name="first-name")
-                label Last Name
-                    input(type="text",  name="last-name")
-                label Email
-                    input(type="email",  name="email")
-                label Phone
-                    input(type="phone",  name="phone")
-                label Job Description
-                    textarea(name="desc")
-                button(type="submit") Submit
-
-            | <i class="fa fa-chevron-circle-up btt" aria-hidden="true"></i>
-
+        
 block bodyscripts
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
     script(src="scripts/jquery.scrollto/jquery.scrollTo.js")
     script(src='/js/global.js')
-    script(type="text/javascript" src="scripts/slick-carousel/slick/slick.js")

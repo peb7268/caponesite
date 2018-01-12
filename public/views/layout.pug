@@ -1,7 +1,7 @@
 //- layout.pug
 html(lang="en")
   head
-    title 4GC | 4th Generation Construction Inc - Chicago Decks, Pergolas, &amp; Porches
+    title Capone
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(name="keywords", content="Chicago decks, pergolas, covered porches")
 
@@ -9,41 +9,22 @@ html(lang="en")
         script(src="https://use.fontawesome.com/8e07ad6cf8.js")
         script(src="./js/modernizr.js")
         
-        //- <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108539566-1"></script>
-        script
-            | window.dataLayer = window.dataLayer || [];
-            | function gtag(){dataLayer.push(arguments);}
-            | gtag('js', new Date());
-
-            | gtag('config', 'UA-108539566-1');
-
     block styles
         link(rel="stylesheet", href="/styles/css/styles.css")
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 
     body.page(class=active_page)
-        div.header-wrapper.full-wrapper
-            img(src="./img/hbg1.png").hbg
-            div.container
-                header.group
-                    .wrapper
-                        .logo-text
-                            a(href="./").logo
-                                h1 
-                                    | 4
-                                    span th 
-                                    | G
-                                    span eneration 
-                                    | C
-                                    span onstruction
-                                    p general contractor
-                        //- a.nav-toggle(href="#")
-                        //-     i.fa.fa-bars
-                        a.phone(href="tel:7739086311") (773) 908-6311
-                        include nav.pug  
-                        a.nav-toggle(href="#")
-                            <i class="fa fa-bars" aria-hidden="true"></i>    
+        .header-wrapper
+            header
+                .wrapper
+                    a.logo(href="#")
+                        img(src="./img/logo.png")
+                        h1  
+                            | capone
+                            span.tagline make the competition forgetaboutit
+                    
+                    include nav.pug
+
     block content
 
     block bodyscripts
@@ -52,33 +33,4 @@ html(lang="en")
         script(src='/js/global.js')
 
     block footer
-        footer#footer   
-            div
-                h4 4th Generation Construction Inc.
-                p PO Box 25584
-                p Chicago, IL 60625
-
-                h4 Hours
-                p Mon - Fri 8:30am - 4:30pm
-                p Sat &amp; Sun Closed
-
-            div
-                h4 Liscenced &amp; Insured
-                ul
-                    li LIC # TGC063207 (CHICAGO)
-                    li LIC # 11LICC-0032 (EVANSTON)
-                    li LIC # CL004853 (OAK PARK)
-                    li.bbb
-                        img(src="./img/bbb.png")
-            div
-                ul.affiliations
-                    h4 get in touch
-                    li.social
-                        ul.icons
-                            li.yelp
-                                a(href="https://www.yelp.com/biz_photos/4th-generation-construction-chicago-4?select=AlACN7NJKX5AWOrnJalW8g", target="_blank") <i class="fa fa-yelp" aria-hidden="true"></i> check out our work
-                            li.facebook
-                                a(href="https://www.facebook.com/4th-Generation-Construction-Inc-263314153736231", target="_blank") <i class="fa fa-facebook-official" aria-hidden="true"></i> connect with us
-                            li.angieslist
-                                a(href="https://www.angieslist.com/companylist/us/il/chicago/4th-generation-construction-inc-reviews-6506512.htm", target="_blank") <i class="fa fa-angellist" aria-hidden="true"></i> see some reviews
-                
+        footer#footer
