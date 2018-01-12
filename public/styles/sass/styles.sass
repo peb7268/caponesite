@@ -160,17 +160,35 @@ a
         padding: 10px 20px;
         h2
             font-family: 'Roboto Slab', serif;
-            font-size: 35pt;
             text-transform: capitalize;
             font-weight: bold;
             margin: 0 0 15px;
+            font-size: 20pt;
+        .graphic
+            width: 100%;
+            height: 250px;
+            background: #333;
+        .message
+            min-height: 47%;
+            p
+                line-height: 1.2;
         &:nth-child(1)
             background: #333;
             color: $logo-color;
+            h2
+                font-size: 35pt;
             span
                 color: #fff;
+        &:nth-child(odd)
+            h2
+                margin: 15px 0;
+        &:nth-child(even)
+            h2
+                margin: 15px 0;
         &:nth-child(2)
             background: #a1d8c7;
+            h2
+                color: #125b74;
         &:nth-child(3)
             background: #8cbdae;
         &:nth-child(4)
