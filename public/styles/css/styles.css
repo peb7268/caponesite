@@ -600,6 +600,7 @@ a#prev {
 
 footer {
   display: flex;
+  display: none;
   align-items: flex-start;
   padding: 20px 0 40px;
   box-sizing: border-box;
