@@ -94,7 +94,6 @@ a
         display: none;
         color: #fff;
         font-size: 22pt;
-
     &.rearrange
         & > .container
             width: 50%;
@@ -148,6 +147,38 @@ a
                                 background: darken(#888888, 5%);
                                 cursor: pointer;
                                 transform: scale(1);
+
+.hero
+    display: flex;
+    height: 100%;
+    li
+        width: 25%;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        margin-right: 1px;
+        padding: 10px 20px;
+        h2
+            font-family: 'Roboto Slab', serif;
+            font-size: 35pt;
+            text-transform: capitalize;
+            font-weight: bold;
+            margin: 0 0 15px;
+        &:nth-child(1)
+            background: #333;
+            color: $logo-color;
+            span
+                color: #fff;
+        &:nth-child(2)
+            background: #a1d8c7;
+        &:nth-child(3)
+            background: #8cbdae;
+        &:nth-child(4)
+            background: #76a093;
+        p
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            font-size: 17pt;
 
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a
     color: $primary;
