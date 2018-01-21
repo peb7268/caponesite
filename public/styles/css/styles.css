@@ -187,12 +187,10 @@ a {
                 transform: scale(1); }
 
 .hero {
-  display: flex;
-  height: 100%; }
+  display: flex; }
   .hero li {
     width: 25%;
     display: flex;
-    height: 100%;
     flex-direction: column;
     margin-right: 1px; }
     .hero li h2 {
@@ -205,10 +203,8 @@ a {
       width: 100%;
       height: 250px;
       background: #333; }
-    .hero li .message {
-      min-height: 47%; }
-      .hero li .message p {
-        line-height: 1.2; }
+    .hero li .message p {
+      line-height: 1.2; }
     .hero li:nth-child(1) {
       background: #333;
       color: #e94c61; }
@@ -221,21 +217,27 @@ a {
     .hero li:nth-child(odd).col .panel {
       background: #333;
       right: 0;
-      transition: right 250ms 100ms ease-in-out; }
+      transition: right 250ms 250ms ease-in-out; }
     .hero li:nth-child(even) h2 {
       margin: 15px 0; }
     .hero li:nth-child(even).col .panel {
       background: #125b74;
       left: 0;
-      transition: left 250ms 100ms ease-in-out; }
+      transition: left 250ms 250ms ease-in-out; }
       .hero li:nth-child(even).col .panel h2 {
         color: #fff; }
+    .hero li:nth-child(2) .graphic {
+      height: 57%; }
     .hero li:nth-child(2) .content {
       background: #a1d8c7; }
       .hero li:nth-child(2) .content h2 {
         color: #125b74; }
     .hero li:nth-child(3) .content {
       background: #8cbdae; }
+      .hero li:nth-child(3) .content .graphic {
+        height: 50%; }
+      .hero li:nth-child(3) .content .message {
+        height: 25%; }
     .hero li:nth-child(4) .content {
       background: #76a093; }
     .hero li p {
@@ -248,7 +250,8 @@ a {
     .hero li.col .content {
       position: relative;
       z-index: 10;
-      padding: 10px 20px; }
+      padding: 10px 20px;
+      height: 100%; }
     .hero li.col .panel {
       position: absolute;
       top: 0;
