@@ -216,20 +216,20 @@ a {
         font-size: 35pt; }
       .hero li:nth-child(1) span {
         color: #fff; }
-    .hero li:nth-child(odd) {
-      right: 0; }
-      .hero li:nth-child(odd) h2 {
-        margin: 15px 0; }
-      .hero li:nth-child(odd).col .panel {
-        background: #333; }
-    .hero li:nth-child(even) {
-      left: 0; }
-      .hero li:nth-child(even) h2 {
-        margin: 15px 0; }
-      .hero li:nth-child(even).col .panel {
-        background: #125b74; }
-        .hero li:nth-child(even).col .panel h2 {
-          color: #fff; }
+    .hero li:nth-child(odd) h2 {
+      margin: 15px 0; }
+    .hero li:nth-child(odd).col .panel {
+      background: #333;
+      right: 0;
+      transition: right 250ms 100ms ease-in-out; }
+    .hero li:nth-child(even) h2 {
+      margin: 15px 0; }
+    .hero li:nth-child(even).col .panel {
+      background: #125b74;
+      left: 0;
+      transition: left 250ms 100ms ease-in-out; }
+      .hero li:nth-child(even).col .panel h2 {
+        color: #fff; }
     .hero li:nth-child(2) .content {
       background: #a1d8c7; }
       .hero li:nth-child(2) .content h2 {
@@ -254,8 +254,7 @@ a {
       top: 0;
       height: 100%;
       width: 100%;
-      z-index: 1;
-      transition: all 250ms ease-in-out; }
+      z-index: 1; }
     .hero li.col:nth-child(even):hover {
       cursor: pointer; }
       .hero li.col:nth-child(even):hover .panel {
@@ -263,7 +262,7 @@ a {
     .hero li.col:nth-child(odd):hover {
       cursor: pointer; }
       .hero li.col:nth-child(odd):hover .panel {
-        right: 100%; }
+        right: -100%; }
 
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a {
   color: #fff; }

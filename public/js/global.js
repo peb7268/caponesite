@@ -61,6 +61,8 @@ function changeTestimonial($container, testimonials, testimonialIdx){
 
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
+    $('.hero .col').on('mouseover', addZIndex);
+    $('.hero .col').on('mouseout', removeZIndex);
     $('.nav li a, .cta-btn').on('click', function(evt){
         evt.preventDefault();
         navigate(evt);
@@ -72,6 +74,26 @@ function bindEvents(){
     $(window).trigger('resize');
     $('form').on('submit', postFormData);
 }
+
+function addZIndex(evt){
+    $('.hero .col').removeAttr('style');
+    $(this).css('zIndex', 10);
+    // if($(this).is(':odd')){
+    //     //zindex the 
+    // } else {
+
+    // }
+}
+
+function removeZIndex(evt){
+    $(this).removeAttr('zIndex');
+    // if($(this).is(':odd')){
+    //     //zindex the 
+    // } else {
+
+    // }
+}
+
 
 function postFormData(evt){
     evt.preventDefault();

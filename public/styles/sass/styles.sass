@@ -179,25 +179,28 @@ a
             span
                 color: #fff;
         &:nth-child(odd)
-            right: 0;
             h2
                 margin: 15px 0;
             &.col .panel
                 background: #333;
+                right: 0;
+                transition: right 250ms 100ms ease-in-out;
         &:nth-child(even)
-            left: 0;
             h2
                 margin: 15px 0;
             &.col .panel
                 background: $logo-teal;
+                left: 0;
+                transition: left 250ms 100ms ease-in-out;
                 h2
                     color: #fff;
         &:nth-child(2) .content
             background: #a1d8c7;
             h2
                 color: #125b74;
-        &:nth-child(3) .content
-            background: #8cbdae;
+        &:nth-child(3)
+            .content
+                background: #8cbdae;
         &:nth-child(4) .content
             background: #76a093;
         p
@@ -217,7 +220,6 @@ a
             height: 100%;
             width: 100%;
             z-index: 1;
-            transition: all 250ms ease-in-out;
         &:nth-child(even):hover
             cursor: pointer;
             .panel
@@ -225,7 +227,7 @@ a
         &:nth-child(odd):hover
             cursor: pointer;
             .panel
-                right: 100%;
+                right: -100%;
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a
     color: $primary;
 
