@@ -8,8 +8,8 @@
   "main": "server.js",
   "scripts": {
     "start": "clear; NODE_ENV=development node server",
-    "startdev": "clear; NODE_ENV=development nodemon server",
-    "dev": "node-sass -w public/styles/sass -o public/styles/css/ & browser-sync start -p 'localhost:5000' --files 'public/styles/css'",
+    "devserver": "clear; NODE_ENV=development nodemon server",
+    "devbuild": "node-sass -w public/styles/sass -o public/styles/css/ & browser-sync start -p 'localhost:5000' --files 'public/styles/css'",
     "deploy": "clear; git add . && git commit -m 'heroku deploy' && git push && git push heroku",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

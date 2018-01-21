@@ -157,7 +157,6 @@ a
         height: 100%;
         flex-direction: column;
         margin-right: 1px;
-        padding: 10px 20px;
         h2
             font-family: 'Roboto Slab', serif;
             text-transform: capitalize;
@@ -180,24 +179,53 @@ a
             span
                 color: #fff;
         &:nth-child(odd)
+            right: 0;
             h2
                 margin: 15px 0;
+            &.col .panel
+                background: #333;
         &:nth-child(even)
+            left: 0;
             h2
                 margin: 15px 0;
-        &:nth-child(2)
+            &.col .panel
+                background: $logo-teal;
+                h2
+                    color: #fff;
+        &:nth-child(2) .content
             background: #a1d8c7;
             h2
                 color: #125b74;
-        &:nth-child(3)
+        &:nth-child(3) .content
             background: #8cbdae;
-        &:nth-child(4)
+        &:nth-child(4) .content
             background: #76a093;
         p
             font-family: 'Open Sans', sans-serif;
             color: #fff;
             font-size: 17pt;
-
+    li.col
+        position: relative;
+        z-index: 1;
+        .content
+            position: relative;
+            z-index: 10;
+            padding: 10px 20px;
+        .panel
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            transition: all 250ms ease-in-out;
+        &:nth-child(even):hover
+            cursor: pointer;
+            .panel
+                left: -100%;
+        &:nth-child(odd):hover
+            cursor: pointer;
+            .panel
+                right: 100%;
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a
     color: $primary;
 
