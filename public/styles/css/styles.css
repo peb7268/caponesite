@@ -73,7 +73,7 @@ a {
 .header-wrapper {
   background: #fff; }
   .header-wrapper header {
-    min-height: 125px;
+    min-height: 95px;
     position: relative;
     margin: 0; }
     .header-wrapper header .wrapper {
@@ -82,14 +82,15 @@ a {
       transition: all 350ms ease-in-out; }
       .header-wrapper header .wrapper a.logo {
         display: flex;
-        align-items: center; }
+        align-items: center;
+        margin-top: -4px; }
         .header-wrapper header .wrapper a.logo > img {
-          max-width: 150px; }
+          max-width: 95px; }
         .header-wrapper header .wrapper a.logo h1 {
           font-family: 'Sedgwick Ave Display', cursive;
           font-family: 'Bungee Inline', cursive;
           font-weight: 100;
-          font-size: 54pt;
+          font-size: 45pt;
           margin: 4px 0 0 -14px;
           color: #e94c61;
           display: -webkit-box;
@@ -106,7 +107,7 @@ a {
           .header-wrapper header .wrapper a.logo h1 span.tagline {
             margin: -6px 0 0px 0;
             color: #125c74;
-            font-size: 15pt;
+            font-size: 13pt;
             letter-spacing: -1px;
             font-family: 'Open Sans', sans-serif; }
       .header-wrapper header .wrapper .nav {
@@ -214,9 +215,11 @@ a {
       .hero li a.btn-outline:hover {
         background: #e94c61;
         color: #fff; }
-    .hero li .social li {
-      transition: color 100ms ease-in-out; }
-      .hero li .social li:hover {
+    .hero li .social li a {
+      color: #e94c61;
+      transition: color 200ms ease-in-out;
+      font-size: 17pt; }
+      .hero li .social li a:hover {
         color: #fff;
         cursor: pointer; }
     .hero li h2 {
@@ -322,7 +325,7 @@ a {
   color: #fff; }
 
 .content-wrapper {
-  height: calc(100% - 150px); }
+  height: calc(100% - 95px); }
   .content-wrapper > .banner {
     position: relative;
     background: #333;
@@ -686,45 +689,36 @@ a#prev {
 
 footer {
   display: flex;
-  display: none;
-  align-items: flex-start;
-  padding: 20px 0 40px;
+  align-items: center;
+  padding: 10px 5px;
   box-sizing: border-box;
-  justify-content: space-around;
-  border-top: 1px solid #000; }
-  footer div {
-    width: 30%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column; }
-    footer div:nth-child(1) h4:nth-child(even) {
-      margin: 25px 0 0 0; }
-    footer div h4 {
-      font-weight: bold;
-      font-size: 17pt;
-      color: #999;
-      margin: 0 0 5px 0;
-      text-transform: capitalize; }
-    footer div p, footer div li {
-      color: #565565;
-      font-size: 13pt;
-      font-weight: 500;
-      line-height: 1.4; }
-    footer div li.bbb {
-      background: #fff;
-      padding: 5px;
-      box-sizing: border-box;
-      border-radius: 10px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-self: center;
-      margin: 12px 0 0 0; }
-      footer div li.bbb img {
-        width: 150px;
-        height: 65px; }
+  justify-content: start;
+  border-top: 1px solid #000;
+  background: #333;
+  color: #eee; }
 
 .gallery footer {
   display: none; }
+
+body.page.learn, body.page.pricing {
+  background: #333; }
+  body.page.learn .band, body.page.pricing .band {
+    width: 90%;
+    margin: 25px auto; }
+    body.page.learn .band > .graphic, body.page.pricing .band > .graphic {
+      display: none; }
+    body.page.learn .band > .message > h2, body.page.pricing .band > .message > h2 {
+      font-family: 'Roboto Slab', serif;
+      text-transform: capitalize;
+      font-weight: bold;
+      margin: 0 0 15px;
+      font-size: 20pt;
+      font-size: 27pt;
+      color: #e94c61; }
+    body.page.learn .band > .message p, body.page.pricing .band > .message p {
+      color: #eee;
+      font-size: 14pt;
+      font-family: 'Open Sans', sans-serif; }
 
 @media only screen and (max-width: 550px) {
   .content-container.container.slider {

@@ -29,7 +29,7 @@ a
     background: $primary;
 
     header
-        min-height: 125px;
+        min-height: 95px;
         position: relative;
         margin: 0;
         .wrapper
@@ -40,13 +40,14 @@ a
             a.logo
                 display: flex;
                 align-items: center;
+                margin-top: -4px;
                 & > img
-                    max-width: 150px;
+                    max-width: 95px;
                 h1
                     font-family: 'Sedgwick Ave Display', cursive;
                     font-family: 'Bungee Inline', cursive;
                     font-weight: 100;
-                    font-size: 54pt;
+                    font-size: 45pt;
                     margin: 4px 0 0 -14px;
                     color: #e94c61;
                     display: -webkit-box;
@@ -63,7 +64,7 @@ a
                     span.tagline
                         margin: -6px 0 0px 0;
                         color: #125c74;
-                        font-size: 15pt;
+                        font-size: 13pt;
                         letter-spacing: -1px;
                         font-family: 'Open Sans', sans-serif;
 
@@ -175,8 +176,10 @@ a
             &:hover
                 background: $logo-color;
                 color: #fff;
-        .social li
-            transition: color 100ms ease-in-out;
+        .social li a
+            color: $logo-color;
+            transition: color 200ms ease-in-out;
+            font-size: 17pt;
             &:hover
                 color: #fff;
                 cursor: pointer;
@@ -290,7 +293,7 @@ a
     color: $primary;
 
 .content-wrapper
-    height: calc(100% - 150px);
+    height: calc(100% - 95px);
     & > .banner
         position: relative;
         background: #333;
@@ -659,49 +662,38 @@ a#prev
 
 footer
     display: flex;
-    display: none;
-    align-items: flex-start;
-    padding: 20px 0 40px;
+    align-items: center;
+    padding: 10px 5px;
     box-sizing: border-box;
-    justify-content: space-around;
+    justify-content: start;
     border-top: 1px solid #000;
-    div
-        width: 30%;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        &:nth-child(1)
-            h4
-                &:nth-child(even)
-                    margin: 25px 0 0 0;
-                
-        h4
-            font-weight: bold;
-            font-size: 17pt;
-            color: #999;
-            margin: 0 0 5px 0;
-            text-transform: capitalize;
-        p, li
-            color: #565565;
-            font-size: 13pt;
-            font-weight: 500;
-            line-height: 1.4;
+    background: #333;
+    color: #eee;
 
-        li.bbb
-            background: #fff;
-            padding: 5px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            border-radius: 10px;
-            display: inline-flex;
-            align-self: center;
-            margin: 12px 0 0 0;
-
-            img
-                width: 150px;
-                height: 65px;
 .gallery
     footer
         display: none;
+
+//Learn
+body.page.learn, body.page.pricing
+    background: #333;
+    .band
+        width: 90%;
+        margin: 25px auto;
+        & > .graphic
+            display: none;
+        & > .message
+            & > h2
+                font-family: 'Roboto Slab', serif;
+                text-transform: capitalize;
+                font-weight: bold;
+                margin: 0 0 15px;
+                font-size: 20pt;
+                font-size: 27pt;
+                color: $logo-color;
+            p
+                color: #eee;
+                font-size: 14pt;
+                font-family: 'Open Sans', sans-serif;
 
 @import 'mediaqueries';
