@@ -5,7 +5,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  box-sizing: border-box; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -187,12 +188,37 @@ a {
                 transform: scale(1); }
 
 .hero {
-  display: flex; }
+  display: flex;
+  height: 100%; }
   .hero li {
     width: 25%;
     display: flex;
     flex-direction: column;
     margin-right: 1px; }
+    .hero li .content {
+      position: relative;
+      z-index: 10;
+      padding: 10px 20px;
+      height: 100%; }
+    .hero li a.btn-outline {
+      color: #e94c61;
+      border: 1px solid #e94c61;
+      padding: 7px;
+      border-radius: 5px;
+      display: block;
+      margin: 10px 0;
+      text-transform: capitalize;
+      text-align: center;
+      font-weight: bold;
+      transition: background-color 100ms ease-in-out; }
+      .hero li a.btn-outline:hover {
+        background: #e94c61;
+        color: #fff; }
+    .hero li .social li {
+      transition: color 100ms ease-in-out; }
+      .hero li .social li:hover {
+        color: #fff;
+        cursor: pointer; }
     .hero li h2 {
       font-family: 'Roboto Slab', serif;
       text-transform: capitalize;
@@ -207,17 +233,26 @@ a {
       line-height: 1.2; }
     .hero li:nth-child(1) {
       background: #333;
-      color: #e94c61; }
+      color: #e94c61;
+      justify-content: space-between;
+      padding: 5px; }
       .hero li:nth-child(1) h2 {
         font-size: 35pt; }
       .hero li:nth-child(1) span {
         color: #fff; }
+      .hero li:nth-child(1) p {
+        margin-bottom: 25px; }
     .hero li:nth-child(odd) h2 {
       margin: 15px 0; }
     .hero li:nth-child(odd).col .panel {
       background: #333;
       right: 0;
       transition: right 250ms 250ms ease-in-out; }
+      .hero li:nth-child(odd).col .panel h2 {
+        color: #e94c61;
+        margin-bottom: 15px; }
+      .hero li:nth-child(odd).col .panel p {
+        color: #fff; }
     .hero li:nth-child(even) h2 {
       margin: 15px 0; }
     .hero li:nth-child(even).col .panel {
@@ -225,9 +260,12 @@ a {
       left: 0;
       transition: left 250ms 250ms ease-in-out; }
       .hero li:nth-child(even).col .panel h2 {
-        color: #fff; }
+        color: #fff;
+        margin-bottom: 15px; }
+      .hero li:nth-child(even).col .panel p {
+        color: #e94c61; }
     .hero li:nth-child(2) .graphic {
-      height: 57%; }
+      height: 72%; }
     .hero li:nth-child(2) .content {
       background: #a1d8c7; }
       .hero li:nth-child(2) .content h2 {
@@ -235,11 +273,15 @@ a {
     .hero li:nth-child(3) .content {
       background: #8cbdae; }
       .hero li:nth-child(3) .content .graphic {
-        height: 50%; }
+        height: 60%; }
       .hero li:nth-child(3) .content .message {
-        height: 25%; }
+        height: 35%; }
     .hero li:nth-child(4) .content {
       background: #76a093; }
+      .hero li:nth-child(4) .content .message {
+        height: 30%; }
+      .hero li:nth-child(4) .content .graphic {
+        height: 65%; }
     .hero li p {
       font-family: 'Open Sans', sans-serif;
       color: #fff;
@@ -247,17 +289,17 @@ a {
   .hero li.col {
     position: relative;
     z-index: 1; }
-    .hero li.col .content {
-      position: relative;
-      z-index: 10;
-      padding: 10px 20px;
-      height: 100%; }
     .hero li.col .panel {
       position: absolute;
       top: 0;
       height: 100%;
       width: 100%;
-      z-index: 1; }
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .hero li.col .panel h2, .hero li.col .panel p {
+        text-align: center; }
     .hero li.col:nth-child(even):hover {
       cursor: pointer; }
       .hero li.col:nth-child(even):hover .panel {
@@ -266,67 +308,78 @@ a {
       cursor: pointer; }
       .hero li.col:nth-child(odd):hover .panel {
         right: -100%; }
+  .hero .social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 98%; }
+    .hero .social li {
+      width: initial;
+      margin: 0 5px 0 0;
+      font-size: 17pt; }
 
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a {
   color: #fff; }
 
-.content-wrapper > .banner {
-  position: relative;
-  background: #333;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #000;
-  box-shadow: inset 0px 0px 145px #000;
-  overflow: hidden; }
-  .content-wrapper > .banner img {
-    max-width: 100%;
-    top: 0;
-    left: 0;
-    filter: blur(2px);
-    opacity: 0.7;
-    transition: filter, opacity 500ms; }
-  .content-wrapper > .banner .cta {
-    position: absolute;
-    right: 10%;
-    bottom: 30%; }
-    .content-wrapper > .banner .cta h2 {
-      color: #fff;
-      text-transform: capitalize;
-      font-size: 30pt;
-      font-weight: bold;
-      text-shadow: 0px 1px #333; }
-    .content-wrapper > .banner .cta ul {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin: 7px 0 0;
-      float: right; }
-      .content-wrapper > .banner .cta ul li {
+.content-wrapper {
+  height: calc(100% - 150px); }
+  .content-wrapper > .banner {
+    position: relative;
+    background: #333;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #000;
+    box-shadow: inset 0px 0px 145px #000;
+    overflow: hidden; }
+    .content-wrapper > .banner img {
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      filter: blur(2px);
+      opacity: 0.7;
+      transition: filter, opacity 500ms; }
+    .content-wrapper > .banner .cta {
+      position: absolute;
+      right: 10%;
+      bottom: 30%; }
+      .content-wrapper > .banner .cta h2 {
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 30pt;
+        font-weight: bold;
+        text-shadow: 0px 1px #333; }
+      .content-wrapper > .banner .cta ul {
         display: flex;
-        width: 49%; }
-        .content-wrapper > .banner .cta ul li a {
+        justify-content: space-between;
+        width: 100%;
+        margin: 7px 0 0;
+        float: right; }
+        .content-wrapper > .banner .cta ul li {
           display: flex;
-          background: #fff;
-          color: #fff;
-          width: 100%;
-          justify-content: center;
-          padding: 7px;
-          border-radius: 4px;
-          text-transform: capitalize;
-          border: 1px solid #e6e6e6;
-          transition: background 250ms; }
-          .content-wrapper > .banner .cta ul li a:hover {
-            cursor: pointer; }
-          .content-wrapper > .banner .cta ul li a:hover {
-            background: #d9d9d9; }
-        .content-wrapper > .banner .cta ul li:last-child a {
-          background: #253d59;
-          border: 1px solid #162435; }
-          .content-wrapper > .banner .cta ul li:last-child a:hover {
-            background: #0f1823; }
-  .content-wrapper > .banner:hover > img {
-    filter: blur(0px);
-    opacity: 1;
-    cursor: pointer; }
+          width: 49%; }
+          .content-wrapper > .banner .cta ul li a {
+            display: flex;
+            background: #fff;
+            color: #fff;
+            width: 100%;
+            justify-content: center;
+            padding: 7px;
+            border-radius: 4px;
+            text-transform: capitalize;
+            border: 1px solid #e6e6e6;
+            transition: background 250ms; }
+            .content-wrapper > .banner .cta ul li a:hover {
+              cursor: pointer; }
+            .content-wrapper > .banner .cta ul li a:hover {
+              background: #d9d9d9; }
+          .content-wrapper > .banner .cta ul li:last-child a {
+            background: #253d59;
+            border: 1px solid #162435; }
+            .content-wrapper > .banner .cta ul li:last-child a:hover {
+              background: #0f1823; }
+    .content-wrapper > .banner:hover > img {
+      filter: blur(0px);
+      opacity: 1;
+      cursor: pointer; }
 
 .content-container {
   display: flex;

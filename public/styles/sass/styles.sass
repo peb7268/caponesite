@@ -150,11 +150,37 @@ a
 
 .hero
     display: flex;
+    height: 100%;
     li
         width: 25%;
         display: flex;
         flex-direction: column;
         margin-right: 1px;
+        .content
+            position: relative;
+            z-index: 10;
+            padding: 10px 20px;
+            height: 100%;
+        a.btn-outline
+            color: $logo-color;
+            border: 1px solid $logo-color;
+            padding: 7px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px 0;
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 100ms ease-in-out;
+            &:hover
+                background: $logo-color;
+                color: #fff;
+        .social li
+            transition: color 100ms ease-in-out;
+            &:hover
+                color: #fff;
+                cursor: pointer;
+
         h2
             font-family: 'Roboto Slab', serif;
             text-transform: capitalize;
@@ -171,10 +197,14 @@ a
         &:nth-child(1)
             background: #333;
             color: $logo-color;
+            justify-content: space-between;
+            padding: 5px;
             h2
                 font-size: 35pt;
             span
                 color: #fff;
+            p
+                margin-bottom: 25px;
         &:nth-child(odd)
             h2
                 margin: 15px 0;
@@ -182,6 +212,11 @@ a
                 background: #333;
                 right: 0;
                 transition: right 250ms 250ms ease-in-out;
+                h2
+                    color: $logo-color;
+                    margin-bottom: 15px;
+                p
+                    color: #fff;
         &:nth-child(even)
             h2
                 margin: 15px 0;
@@ -191,9 +226,12 @@ a
                 transition: left 250ms 250ms ease-in-out;
                 h2
                     color: #fff;
+                    margin-bottom: 15px;
+                p
+                    color: $logo-color;
         &:nth-child(2) 
             .graphic
-                height: 57%;
+                height: 72%;
             .content
                 background: #a1d8c7;
                 h2
@@ -202,11 +240,16 @@ a
             .content
                 background: #8cbdae;
                 .graphic
-                    height: 50%;
+                    height: 60%;
                 .message
-                    height: 25%;
-        &:nth-child(4) .content
-            background: #76a093;
+                    height: 35%;
+        &:nth-child(4) 
+            .content
+                background: #76a093;
+                .message
+                    height: 30%;
+                .graphic
+                    height: 65%;
         p
             font-family: 'Open Sans', sans-serif;
             color: #fff;
@@ -214,17 +257,18 @@ a
     li.col
         position: relative;
         z-index: 1;
-        .content
-            position: relative;
-            z-index: 10;
-            padding: 10px 20px;
-            height: 100%;
         .panel
             position: absolute;
             top: 0;
             height: 100%;
             width: 100%;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2, p 
+                text-align: center;
+
         &:nth-child(even):hover
             cursor: pointer;
             .panel
@@ -233,10 +277,20 @@ a
             cursor: pointer;
             .panel
                 right: -100%;
+    .social
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 98%;
+        li
+            width: initial;
+            margin: 0 5px 0 0;
+            font-size: 17pt;
 .gallery .header-wrapper header .wrapper .nav li:nth-child(3) a
     color: $primary;
 
 .content-wrapper
+    height: calc(100% - 150px);
     & > .banner
         position: relative;
         background: #333;
