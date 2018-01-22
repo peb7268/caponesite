@@ -63,14 +63,14 @@ function bindEvents(){
     $(window).on('resize', toggleCapabilities);
     $('.hero .col').on('mouseover', addZIndex);
     $('.hero .col').on('mouseout', removeZIndex);
-    $('.nav li a, .cta-btn').on('click', function(evt){
-        evt.preventDefault();
-        navigate(evt);
-    });
+    // $('.nav li a, .cta-btn').on('click', function(evt){
+    //     evt.preventDefault();
+    //     navigate(evt);
+    // });
     $('.nav-toggle').on('click', toggleNav);
     $('.btt').on('click', scrollToTop);
 
-    if(isMobile === false) bindScrollEvents();
+    //if(isMobile === false) bindScrollEvents();
     $(window).trigger('resize');
     $('form').on('submit', postFormData);
 }

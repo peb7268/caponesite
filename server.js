@@ -21,7 +21,8 @@ app.set('view engine', 'pug');
 
 //Routes
 app.get('/', (req, res) => res.render('index', {active_page: 'home'}));
-app.get('/gallery', (req, res) => res.render('gallery', {active_page: 'gallery'}));
+app.get('/learn', (req, res) => res.render('learn', {active_page: 'learn'}));
+app.get('/pricing', (req, res) => res.render('pricing', {active_page: 'pricing'}));
 //app.get('/about', (req, res) => res.render('about', {message: 'Great and nerdy things coming... stay tuned.', title: 'this is how you pass data from express to your views.', active_page: 'about-page'}));
 
 app.post('/contact', (req, res)=>{
