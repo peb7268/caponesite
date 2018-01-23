@@ -772,19 +772,48 @@ body.page.pricing
     .content-wrapper
         min-height: calc(100% - 95px);
         & > .band
-            margin-top: -20px;
+            margin-top: -22px;
             z-index: 10;
             position: relative;
             ul.pricing_schedule
                 display: flex;
                 justify-content: space-between;
-                li
+                & > li
                     display: flex;
+                    flex-direction: column;
+                    width: 24%;
+                    &:last-child
+                        .box
+                            display: flex;
+                            align-items: center;
                     .heading
                         background: $logo-color;
                         margin: 0 0 5px;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 17pt;
+                        color: #fff;
+                        text-transform: capitalize;
+                        padding: 10px 0;
                     .box
                         background: #fff;
+                        min-height: 150px;
+                        width: 100%;
+                        & > ul
+                            list-style: disc;
+                            box-sizing: border-box;
+                            width: 80%;
+                            margin: 0 auto;
+                            color: #333;
+                            text-transform: capitalize;
+                            font-size: 12pt;
+                            li
+                                margin: 15px 0 10px;
+                        p
+                            margin: 0 auto;
+                            width: 80%;
+                            text-align: center;
+                            color: #333;
     .hero
         min-height: 350px;
         @include horizontal_gradient($logo-teal, lighten($logo-teal, 15%))

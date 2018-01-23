@@ -806,19 +806,47 @@ body.page.learn, body.page.pricing {
 body.page.pricing .content-wrapper {
   min-height: calc(100% - 95px); }
   body.page.pricing .content-wrapper > .band {
-    margin-top: -20px;
+    margin-top: -22px;
     z-index: 10;
     position: relative; }
     body.page.pricing .content-wrapper > .band ul.pricing_schedule {
       display: flex;
       justify-content: space-between; }
-      body.page.pricing .content-wrapper > .band ul.pricing_schedule li {
-        display: flex; }
-        body.page.pricing .content-wrapper > .band ul.pricing_schedule li .heading {
+      body.page.pricing .content-wrapper > .band ul.pricing_schedule > li {
+        display: flex;
+        flex-direction: column;
+        width: 24%; }
+        body.page.pricing .content-wrapper > .band ul.pricing_schedule > li:last-child .box {
+          display: flex;
+          align-items: center; }
+        body.page.pricing .content-wrapper > .band ul.pricing_schedule > li .heading {
           background: #e94c61;
-          margin: 0 0 5px; }
-        body.page.pricing .content-wrapper > .band ul.pricing_schedule li .box {
-          background: #fff; }
+          margin: 0 0 5px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 17pt;
+          color: #fff;
+          text-transform: capitalize;
+          padding: 10px 0; }
+        body.page.pricing .content-wrapper > .band ul.pricing_schedule > li .box {
+          background: #fff;
+          min-height: 150px;
+          width: 100%; }
+          body.page.pricing .content-wrapper > .band ul.pricing_schedule > li .box > ul {
+            list-style: disc;
+            box-sizing: border-box;
+            width: 80%;
+            margin: 0 auto;
+            color: #333;
+            text-transform: capitalize;
+            font-size: 12pt; }
+            body.page.pricing .content-wrapper > .band ul.pricing_schedule > li .box > ul li {
+              margin: 15px 0 10px; }
+          body.page.pricing .content-wrapper > .band ul.pricing_schedule > li .box p {
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+            color: #333; }
 
 body.page.pricing .hero {
   min-height: 350px;
