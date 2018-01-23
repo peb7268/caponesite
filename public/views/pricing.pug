@@ -6,14 +6,32 @@ block styles
 
 block content
     .content-wrapper
-        .graphic
+        .hero
+            .hero-wrapper
+                .message
+                    h2 We're gonna make you an offer you can't refuse
+                    p Why pay big bucks to huge companies for something that takes seconds a week with Capone?
+                    ul.ctas
+                        li
+                            a(href="#") sign up
+                        li
+                            a(href="#") ask a question
         .band
             .message
-                h2 pricing schedule
-                p free
-                p individual
-                p small business
-                p enterprise
+                ul.pricing_schedule
+                    li 
+                        h4.heading free
+                        .box
+                    li 
+                        h4.heading individual
+                        .box
+                    li 
+                        h4.heading small business
+                        .box
+                    li 
+                        h4.heading enterprise
+                        .box
+                //https://evernote.com/get-started
 block bodyscripts
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
     script(src="scripts/jquery.scrollto/jquery.scrollTo.js")

@@ -6,4 +6,30 @@ $logo-color: #e94c61;   //Redish oragnge
 $logo-teal: #125b74;
 
 $cta-secondary: #253d59 //#1580f8;
-$bodyText: #b9d9ff; //light blue
+$bodyText: #b9d9ff;     //light blue
+
+
+//Mixins
+@mixin linear_gradient($startColor, $endColor)
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+    background: $startColor; /* Old browsers */
+    background: -moz-linear-gradient(top, $startColor 0%, $endColor 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $startColor 0%,$endColor 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $startColor 0%,$endColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 ); /* IE6-9 */
+
+@mixin radial_gradient($startColor, $endColor)
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+    background: $startColor; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, $startColor 0%, $endColor 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, $startColor 0%,$endColor 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, $startColor 0%,$endColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+@mixin horizontal_gradient($startColor, $endColor)
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+    background: $startColor; /* Old browsers */
+    background: -moz-linear-gradient(left, $startColor 0%, $endColor 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $startColor 0%,$endColor 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $startColor 0%,$endColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 ); /* IE6-9 */

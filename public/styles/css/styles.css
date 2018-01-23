@@ -42,6 +42,9 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
   /* IE6-9 */ }
 
+strong {
+  font-weight: bold; }
+
 body, p, li, a, h1, h2, h3, h4 {
   font-size: 12pt;
   -webkit-font-smoothing: antialiased;
@@ -71,7 +74,9 @@ a {
   margin: 25px auto; }
 
 .header-wrapper {
-  background: #fff; }
+  background: #fff;
+  overflow: hidden;
+  max-height: 95px; }
   .header-wrapper header {
     min-height: 95px;
     position: relative;
@@ -188,20 +193,20 @@ a {
                 cursor: pointer;
                 transform: scale(1); }
 
-.hero {
+.page.home .hero {
   display: flex;
   height: 100%; }
-  .hero li {
+  .page.home .hero li {
     width: 25%;
     display: flex;
     flex-direction: column;
     margin-right: 1px; }
-    .hero li .content {
+    .page.home .hero li .content {
       position: relative;
       z-index: 10;
       padding: 10px 20px;
       height: 100%; }
-    .hero li a.btn-outline {
+    .page.home .hero li a.btn-outline {
       color: #e94c61;
       border: 1px solid #e94c61;
       padding: 7px;
@@ -212,87 +217,87 @@ a {
       text-align: center;
       font-weight: bold;
       transition: background-color 100ms ease-in-out; }
-      .hero li a.btn-outline:hover {
+      .page.home .hero li a.btn-outline:hover {
         background: #e94c61;
         color: #fff; }
-    .hero li .social li a {
+    .page.home .hero li .social li a {
       color: #e94c61;
       transition: color 200ms ease-in-out;
       font-size: 17pt; }
-      .hero li .social li a:hover {
+      .page.home .hero li .social li a:hover {
         color: #fff;
         cursor: pointer; }
-    .hero li h2 {
+    .page.home .hero li h2 {
       font-family: 'Roboto Slab', serif;
       text-transform: capitalize;
       font-weight: bold;
       margin: 0 0 15px;
       font-size: 20pt; }
-    .hero li .graphic {
+    .page.home .hero li .graphic {
       width: 100%;
       height: 250px;
       background: #333; }
-    .hero li .message p {
+    .page.home .hero li .message p {
       line-height: 1.2; }
-    .hero li:nth-child(1) {
+    .page.home .hero li:nth-child(1) {
       background: #333;
       color: #e94c61;
       justify-content: space-between;
       padding: 5px; }
-      .hero li:nth-child(1) h2 {
+      .page.home .hero li:nth-child(1) h2 {
         font-size: 35pt; }
-      .hero li:nth-child(1) span {
+      .page.home .hero li:nth-child(1) span {
         color: #fff; }
-      .hero li:nth-child(1) p {
+      .page.home .hero li:nth-child(1) p {
         margin-bottom: 25px; }
-    .hero li:nth-child(odd) h2 {
+    .page.home .hero li:nth-child(odd) h2 {
       margin: 15px 0; }
-    .hero li:nth-child(odd).col .panel {
+    .page.home .hero li:nth-child(odd).col .panel {
       background: #333;
       right: 0;
       transition: right 250ms 250ms ease-in-out; }
-      .hero li:nth-child(odd).col .panel h2 {
+      .page.home .hero li:nth-child(odd).col .panel h2 {
         color: #e94c61;
         margin-bottom: 15px; }
-      .hero li:nth-child(odd).col .panel p {
+      .page.home .hero li:nth-child(odd).col .panel p {
         color: #fff; }
-    .hero li:nth-child(even) h2 {
+    .page.home .hero li:nth-child(even) h2 {
       margin: 15px 0; }
-    .hero li:nth-child(even).col .panel {
+    .page.home .hero li:nth-child(even).col .panel {
       background: #125b74;
       left: 0;
       transition: left 250ms 250ms ease-in-out; }
-      .hero li:nth-child(even).col .panel h2 {
+      .page.home .hero li:nth-child(even).col .panel h2 {
         color: #fff;
         margin-bottom: 15px; }
-      .hero li:nth-child(even).col .panel p {
+      .page.home .hero li:nth-child(even).col .panel p {
         color: #e94c61; }
-    .hero li:nth-child(2) .graphic {
+    .page.home .hero li:nth-child(2) .graphic {
       height: 72%; }
-    .hero li:nth-child(2) .content {
+    .page.home .hero li:nth-child(2) .content {
       background: #a1d8c7; }
-      .hero li:nth-child(2) .content h2 {
+      .page.home .hero li:nth-child(2) .content h2 {
         color: #125b74; }
-    .hero li:nth-child(3) .content {
+    .page.home .hero li:nth-child(3) .content {
       background: #8cbdae; }
-      .hero li:nth-child(3) .content .graphic {
+      .page.home .hero li:nth-child(3) .content .graphic {
         height: 60%; }
-      .hero li:nth-child(3) .content .message {
+      .page.home .hero li:nth-child(3) .content .message {
         height: 35%; }
-    .hero li:nth-child(4) .content {
+    .page.home .hero li:nth-child(4) .content {
       background: #76a093; }
-      .hero li:nth-child(4) .content .message {
+      .page.home .hero li:nth-child(4) .content .message {
         height: 30%; }
-      .hero li:nth-child(4) .content .graphic {
+      .page.home .hero li:nth-child(4) .content .graphic {
         height: 65%; }
-    .hero li p {
+    .page.home .hero li p {
       font-family: 'Open Sans', sans-serif;
       color: #fff;
       font-size: 17pt; }
-  .hero li.col {
+  .page.home .hero li.col {
     position: relative;
     z-index: 1; }
-    .hero li.col .panel {
+    .page.home .hero li.col .panel {
       position: absolute;
       top: 0;
       height: 100%;
@@ -301,22 +306,22 @@ a {
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      .hero li.col .panel h2, .hero li.col .panel p {
+      .page.home .hero li.col .panel h2, .page.home .hero li.col .panel p {
         text-align: center; }
-    .hero li.col:nth-child(even):hover {
+    .page.home .hero li.col:nth-child(even):hover {
       cursor: pointer; }
-      .hero li.col:nth-child(even):hover .panel {
+      .page.home .hero li.col:nth-child(even):hover .panel {
         left: -100%; }
-    .hero li.col:nth-child(odd):hover {
+    .page.home .hero li.col:nth-child(odd):hover {
       cursor: pointer; }
-      .hero li.col:nth-child(odd):hover .panel {
+      .page.home .hero li.col:nth-child(odd):hover .panel {
         right: -100%; }
-  .hero .social {
+  .page.home .hero .social {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 98%; }
-    .hero .social li {
+    .page.home .hero .social li {
       width: initial;
       margin: 0 5px 0 0;
       font-size: 17pt; }
@@ -696,29 +701,138 @@ footer {
   border-top: 1px solid #000;
   background: #333;
   color: #eee; }
-
-.gallery footer {
-  display: none; }
+  footer .footer-wrapper {
+    max-width: 1200px;
+    width: 98%;
+    margin: 0 auto; }
+    footer .footer-wrapper a {
+      color: #fff; }
+      footer .footer-wrapper a:hover {
+        color: #e94c61; }
 
 body.page.learn, body.page.pricing {
   background: #333; }
+  body.page.learn .content-wrapper, body.page.pricing .content-wrapper {
+    height: initial; }
+  body.page.learn .hero, body.page.pricing .hero {
+    position: relative;
+    height: 275px;
+    display: block;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+    background: #ec6375;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #ec6375 0%, #e94c61 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #ec6375 0%, #e94c61 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #ec6375 0%, #e94c61 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */ }
+    body.page.learn .hero .hero-wrapper, body.page.pricing .hero .hero-wrapper {
+      max-width: 1200px;
+      width: 98%;
+      margin: 0 auto;
+      position: relative;
+      height: 100%; }
+    body.page.learn .hero .message, body.page.pricing .hero .message {
+      overflow: hidden; }
+      body.page.learn .hero .message h2, body.page.pricing .hero .message h2 {
+        color: #efe;
+        font-size: 27pt;
+        font-family: 'Roboto Slab', serif;
+        margin: 35px 0 0 0;
+        text-shadow: 0px 0px 3px #333; }
+      body.page.learn .hero .message p, body.page.pricing .hero .message p {
+        color: #fff;
+        margin: 10px 0 25px 0; }
+      body.page.learn .hero .message .ctas, body.page.pricing .hero .message .ctas {
+        margin: 35px 0 0 0;
+        overflow: hidden; }
+        body.page.learn .hero .message .ctas li, body.page.pricing .hero .message .ctas li {
+          float: left;
+          margin-right: 5px; }
+          body.page.learn .hero .message .ctas li a, body.page.pricing .hero .message .ctas li a {
+            display: block;
+            padding: 10px 0;
+            text-transform: capitalize;
+            border-radius: 4px;
+            font-weight: bold;
+            min-width: 195px;
+            text-align: center; }
+          body.page.learn .hero .message .ctas li:nth-child(1) a, body.page.pricing .hero .message .ctas li:nth-child(1) a {
+            color: #fff;
+            background: #1d9eec;
+            border: 1px solid #157bb9;
+            text-shadow: 0px 1px 1px #0b3f5f; }
+          body.page.learn .hero .message .ctas li:nth-child(2) a, body.page.pricing .hero .message .ctas li:nth-child(2) a {
+            color: #fff;
+            background: #f5d241;
+            border: 1px solid #655205;
+            text-shadow: 0px 1px 1px #655205; }
+    body.page.learn .hero .graphic, body.page.pricing .hero .graphic {
+      position: absolute;
+      bottom: 0;
+      right: 15%;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+      border: 1px solid #a93c49; }
+      body.page.learn .hero .graphic img, body.page.pricing .hero .graphic img {
+        max-width: 300px; }
   body.page.learn .band, body.page.pricing .band {
     width: 90%;
     margin: 25px auto; }
     body.page.learn .band > .graphic, body.page.pricing .band > .graphic {
       display: none; }
-    body.page.learn .band > .message > h2, body.page.pricing .band > .message > h2 {
-      font-family: 'Roboto Slab', serif;
-      text-transform: capitalize;
-      font-weight: bold;
-      margin: 0 0 15px;
-      font-size: 20pt;
-      font-size: 27pt;
-      color: #e94c61; }
-    body.page.learn .band > .message p, body.page.pricing .band > .message p {
-      color: #eee;
-      font-size: 14pt;
-      font-family: 'Open Sans', sans-serif; }
+    body.page.learn .band > .message, body.page.pricing .band > .message {
+      margin: 0 auto 50px auto;
+      max-width: 1200px;
+      width: 98%; }
+      body.page.learn .band > .message > h2, body.page.pricing .band > .message > h2 {
+        font-family: 'Roboto Slab', serif;
+        text-transform: capitalize;
+        font-weight: bold;
+        margin: 0 0 15px;
+        font-size: 20pt;
+        font-size: 27pt;
+        color: #e94c61; }
+      body.page.learn .band > .message p, body.page.pricing .band > .message p {
+        color: #eee;
+        font-size: 14pt;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.4;
+        margin: 0 0 15px; }
+
+body.page.pricing .content-wrapper {
+  min-height: calc(100% - 95px); }
+  body.page.pricing .content-wrapper > .band {
+    margin-top: -20px;
+    z-index: 10;
+    position: relative; }
+    body.page.pricing .content-wrapper > .band ul.pricing_schedule {
+      display: flex;
+      justify-content: space-between; }
+      body.page.pricing .content-wrapper > .band ul.pricing_schedule li {
+        display: flex; }
+        body.page.pricing .content-wrapper > .band ul.pricing_schedule li .heading {
+          background: #e94c61;
+          margin: 0 0 5px; }
+        body.page.pricing .content-wrapper > .band ul.pricing_schedule li .box {
+          background: #fff; }
+
+body.page.pricing .hero {
+  min-height: 350px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+  background: #125b74;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #125b74 0%, #1c8fb6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #125b74 0%, #1c8fb6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #125b74 0%, #1c8fb6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 );
+  /* IE6-9 */ }
 
 @media only screen and (max-width: 550px) {
   .content-container.container.slider {

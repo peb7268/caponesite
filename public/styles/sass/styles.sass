@@ -2,6 +2,9 @@
 @import 'colors'
 @import 'fonts'
 
+strong
+    font-weight: bold;
+
 body, p, li, a, h1, h2, h3, h4
     font-size: 12pt;
     -webkit-font-smoothing: antialiased;
@@ -27,6 +30,8 @@ a
 
 .header-wrapper
     background: $primary;
+    overflow: hidden;
+    max-height: 95px;
 
     header
         min-height: 95px;
@@ -149,7 +154,7 @@ a
                                 cursor: pointer;
                                 transform: scale(1);
 
-.hero
+.page.home .hero
     display: flex;
     height: 100%;
     li
@@ -669,20 +674,84 @@ footer
     border-top: 1px solid #000;
     background: #333;
     color: #eee;
-
-.gallery
-    footer
-        display: none;
+    .footer-wrapper
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        a
+            color: #fff;
+            &:hover
+                color: $logo-color;
 
 //Learn
 body.page.learn, body.page.pricing
     background: #333;
+    .content-wrapper
+        height: initial;
+    .hero
+        position: relative;
+        height: 275px;
+        display: block;
+        @include radial_gradient(lighten($logo-color, 5%), $logo-color)
+        .hero-wrapper
+            max-width: 1200px;
+            width: 98%;
+            margin: 0 auto;
+            position: relative;
+            height: 100%;
+        .message
+            overflow: hidden;
+            h2
+                color: #efe;
+                font-size: 27pt;
+                font-family: 'Roboto Slab', serif;
+                margin: 35px 0 0 0;
+                text-shadow: 0px 0px 3px #333;
+            p
+                color: #fff;
+                margin: 10px 0 25px 0;
+            .ctas
+                margin: 35px 0 0 0;
+                overflow: hidden;
+                li
+                    float: left;
+                    margin-right: 5px;
+                    a
+                        display: block;
+                        padding: 10px 0;
+                        text-transform: capitalize;
+                        border-radius: 4px;
+                        font-weight: bold;
+                        min-width: 195px;
+                        text-align: center;
+                    &:nth-child(1) a
+                        color: #fff;
+                        background: #1d9eec;
+                        border: 1px solid #157bb9;
+                        text-shadow: 0px 1px 1px #0b3f5f;
+                    &:nth-child(2) a
+                        color: #fff;
+                        background: #f5d241;
+                        border: 1px solid darken(#f5d241, 40%);
+                        text-shadow: 0px 1px 1px darken(#f5d241, 40%);
+        .graphic
+            position: absolute;
+            bottom: 0;
+            right: 15%;
+            border-radius: 4px 4px 0 0;
+            overflow: hidden;
+            border: 1px solid #a93c49;
+            img
+                max-width: 300px;
     .band
         width: 90%;
         margin: 25px auto;
         & > .graphic
             display: none;
         & > .message
+            margin: 0 auto 50px auto;
+            max-width: 1200px;
+            width: 98%;
             & > h2
                 font-family: 'Roboto Slab', serif;
                 text-transform: capitalize;
@@ -695,5 +764,29 @@ body.page.learn, body.page.pricing
                 color: #eee;
                 font-size: 14pt;
                 font-family: 'Open Sans', sans-serif;
+                line-height: 1.4;
+                margin: 0 0 15px;
+
+//Pricing
+body.page.pricing
+    .content-wrapper
+        min-height: calc(100% - 95px);
+        & > .band
+            margin-top: -20px;
+            z-index: 10;
+            position: relative;
+            ul.pricing_schedule
+                display: flex;
+                justify-content: space-between;
+                li
+                    display: flex;
+                    .heading
+                        background: $logo-color;
+                        margin: 0 0 5px;
+                    .box
+                        background: #fff;
+    .hero
+        min-height: 350px;
+        @include horizontal_gradient($logo-teal, lighten($logo-teal, 15%))
 
 @import 'mediaqueries';

@@ -4,7 +4,8 @@ html(lang="en")
     title Capone
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(name="keywords", content="Chicago decks, pergolas, covered porches")
-
+    meta(name="robots" content="noindex")
+    
     block scripts
         script(defer, src="https://use.fontawesome.com/releases/v5.0.4/js/all.js")
         script(src="./js/modernizr.js")
@@ -33,4 +34,6 @@ html(lang="en")
 
     block footer
         footer#footer
-            p.copyright &copy; 2018 Imperative Design, INC
+            .footer-wrapper
+                p.copyright &copy; 2018 
+                    a(href="//imperativedesign.net", target="_blank") Imperative Design, INC
