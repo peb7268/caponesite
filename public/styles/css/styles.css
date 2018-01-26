@@ -204,7 +204,7 @@ a {
     .page.home .hero li .content {
       position: relative;
       z-index: 10;
-      padding: 10px 20px;
+      padding: 10px;
       height: 100%; }
     .page.home .hero li a.btn-outline {
       color: #e94c61;
@@ -235,8 +235,20 @@ a {
       font-size: 20pt; }
     .page.home .hero li .graphic {
       width: 100%;
-      height: 250px;
-      background: #333; }
+      background: #333;
+      overflow: hidden;
+      position: relative; }
+      .page.home .hero li .graphic > img {
+        filter: grayscale(100%);
+        transition: filter 250ms ease-in-out; }
+      .page.home .hero li .graphic .screen {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        transition: opacity 250ms ease-in-out; }
     .page.home .hero li .message p {
       line-height: 1.2; }
     .page.home .hero li:nth-child(1) {
@@ -272,24 +284,39 @@ a {
         margin-bottom: 15px; }
       .page.home .hero li:nth-child(even).col .panel p {
         color: #e94c61; }
-    .page.home .hero li:nth-child(2) .graphic {
-      height: 72%; }
     .page.home .hero li:nth-child(2) .content {
       background: #a1d8c7; }
+      .page.home .hero li:nth-child(2) .content .screen {
+        background: #2b6855;
+        opacity: .7; }
+      .page.home .hero li:nth-child(2) .content .graphic:hover img {
+        filter: grayscale(0); }
+      .page.home .hero li:nth-child(2) .content .graphic:hover .screen {
+        opacity: 0; }
       .page.home .hero li:nth-child(2) .content h2 {
         color: #125b74; }
     .page.home .hero li:nth-child(3) .content {
       background: #8cbdae; }
-      .page.home .hero li:nth-child(3) .content .graphic {
-        height: 60%; }
+      .page.home .hero li:nth-child(3) .content .screen {
+        background: #243f37;
+        opacity: .7; }
+      .page.home .hero li:nth-child(3) .content .graphic:hover img {
+        filter: grayscale(0); }
+      .page.home .hero li:nth-child(3) .content .graphic:hover .screen {
+        opacity: 0; }
       .page.home .hero li:nth-child(3) .content .message {
         height: 35%; }
     .page.home .hero li:nth-child(4) .content {
       background: #76a093; }
+      .page.home .hero li:nth-child(4) .content .screen {
+        background: #141d1a;
+        opacity: .7; }
+      .page.home .hero li:nth-child(4) .content .graphic:hover img {
+        filter: grayscale(0); }
+      .page.home .hero li:nth-child(4) .content .graphic:hover .screen {
+        opacity: 0; }
       .page.home .hero li:nth-child(4) .content .message {
         height: 30%; }
-      .page.home .hero li:nth-child(4) .content .graphic {
-        height: 65%; }
     .page.home .hero li p {
       font-family: 'Open Sans', sans-serif;
       color: #fff;
@@ -698,8 +725,8 @@ footer {
   padding: 10px 5px;
   box-sizing: border-box;
   justify-content: start;
-  border-top: 1px solid #000;
-  background: #333;
+  border-top: 1px solid #082732;
+  background: #125b74;
   color: #eee; }
   footer .footer-wrapper {
     max-width: 1200px;
