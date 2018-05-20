@@ -13,17 +13,11 @@ var testimonials = [
 
 function init(){
     window.isMobile = false;
-    bootstrapSlider();
+    //bootstrapSlider();
     bindEvents();
-    collapseLogo();
-    resumeNav();
-    rotateTestimonials(testimonials);
-    $('.logo-text').addClass('fade-in');
-    // window.setTimeout(() => {
-    //     $('.logo-text').animate({
-    //         'opacity': '1'
-    //     }, 250);
-    // })
+    //collapseLogo();
+    //resumeNav();  //For ScrollTo
+    //rotateTestimonials(testimonials);
 }
 
 function getRandomNumber(previousNumber, floor, ceil){
@@ -61,18 +55,48 @@ function changeTestimonial($container, testimonials, testimonialIdx){
 
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
-    $('.hero .col').on('mouseover', addZIndex);
-    $('.hero .col').on('mouseout', removeZIndex);
-    // $('.nav li a, .cta-btn').on('click', function(evt){
-    //     evt.preventDefault();
-    //     navigate(evt);
-    // });
+    $('.nav li:nth-child(3) a').on('click', toggleContactForm);
     $('.nav-toggle').on('click', toggleNav);
-    $('.btt').on('click', scrollToTop);
-
     //if(isMobile === false) bindScrollEvents();
-    $(window).trigger('resize');
     $('form').on('submit', postFormData);
+}
+
+function toggleContactForm(evt){
+    evt.preventDefault();
+    let $shade = $('#shade');
+    if($shade.length === 0){
+        $shade = $('<div />', {
+            id: 'shade'
+        });
+        $('body').append($shade);
+    }
+    window.setTimeout(() => fadeInShade($shade), 200);
+}
+
+function fadeInShade($shade){
+    $shade.addClass('active');
+    let $formWrapper = $('#formWrapper');
+    if($formWrapper.length === 0){
+        $formWrapper = $('<div />', {
+            id: 'formWrapper'
+        });
+        $('body').append($formWrapper);
+    }
+    window.setTimeout(() => {
+        $formWrapper.addClass('visible');
+        window.setTimeout(() => {
+            $formWrapper.addClass('height');
+            window.setTimeout(() => {
+                $formWrapper.addClass('width');
+            }, 200);
+            window.setTimeout(() => {
+                $('#formWrapper').html($('#contactForm').html());
+                window.setTimeout(()=> {
+                    $('form#contact').addClass('visible');
+                }, 250);
+            }, 300);
+        }, 500);
+    }, 200);
 }
 
 function addZIndex(evt){

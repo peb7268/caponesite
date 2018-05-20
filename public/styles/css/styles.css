@@ -889,6 +889,58 @@ body.page.pricing .hero {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 );
   /* IE6-9 */ }
 
+#shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #000;
+  opacity: 0;
+  transition: opacity  250ms ease-in-out; }
+  #shade.active {
+    opacity: .7; }
+
+#formWrapper {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: #eee;
+  opacity: 0;
+  transition: all  250ms ease-in-out; }
+  #formWrapper.visible {
+    height: 1px;
+    width: 1px;
+    opacity: 1; }
+  #formWrapper.height {
+    height: 350px; }
+  #formWrapper.width {
+    width: 40%;
+    padding: 30px 20px; }
+
+form#contact {
+  opacity: 0;
+  transition: all  500ms ease-in-out; }
+  form#contact.visible {
+    opacity: 1; }
+  form#contact p {
+    margin: 0 0 7px; }
+  form#contact input, form#contact textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 12pt;
+    display: block;
+    width: 100%; }
+    form#contact input[type="submit"], form#contact textarea[type="submit"] {
+      background: #125b74;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 0; }
+
 @media only screen and (max-width: 550px) {
   .content-container.container.slider {
     width: 85%; }

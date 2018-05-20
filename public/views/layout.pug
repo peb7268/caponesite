@@ -12,6 +12,7 @@ html(lang="en")
         
     block styles
         link(rel="stylesheet", href="/styles/css/styles.css")
+        link(rel="stylesheet", href="../node_modules/fancybox/dist/css/jquery.fancybox.css")
 
     body.page(class=active_page)
         .header-wrapper
@@ -26,14 +27,29 @@ html(lang="en")
                     include nav.pug
 
     block content
-
+        
     block bodyscripts
         script(src='./scripts/rxjs/bundles/Rx.js')
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src='/js/global.js')
+        script(src='../node_modules/fancybox/dist/js/jquery.fancybox.js')
 
     block footer
         footer#footer
             .footer-wrapper
                 p.copyright &copy; 2018 
                     a(href="//imperativedesign.net", target="_blank") Imperative Design, INC
+            script(type="text/template", id="contactForm")
+                form#contact
+                    p 
+                        input(type="text", placeholder="First Name")
+                    p 
+                        input(type="text", placeholder="Last Name")
+                    p 
+                        input(type="text", placeholder="Email")
+                    p 
+                        input(type="text", placeholder="Phone Number")
+                    p
+                        textarea(placeholder="Message")
+                    p 
+                        input(type="submit")
