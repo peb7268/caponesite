@@ -42,14 +42,14 @@ html(lang="en")
             script(type="text/template", id="contactForm")
                 form#contact
                     p 
-                        input(type="text", placeholder="First Name")
+                        input(type="text", placeholder="First Name", name="first-name")
                     p 
-                        input(type="text", placeholder="Last Name")
+                        input(type="text", placeholder="Last Name", name="last-name")
                     p 
-                        input(type="text", placeholder="Email")
+                        input(type="text", placeholder="Email", name="email")
                     p 
-                        input(type="text", placeholder="Phone Number")
+                        input(type="text", placeholder="Phone Number", name="phone")
                     p
-                        textarea(placeholder="Message")
+                        textarea(placeholder="Message", name="desc")
                     p 
                         input(type="submit")

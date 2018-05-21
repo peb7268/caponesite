@@ -862,25 +862,28 @@ body.page.pricing
     transition: opacity  250ms ease-in-out;
     &.active
         opacity: .7;
+    &:hover
+        cursor: pointer;
 
 #formWrapper
     position: absolute;
+    z-index: 2000;
     top: 10%;
     left: 30%;
     box-sizing: border-box;
-    z-index: 1000;
     background: #eee;
     opacity: 0;
-    transition: all  250ms ease-in-out;
+    transition: min-height  700ms ease-in-out, width 250ms ease-in-out, opacity 250ms ease-in-out;
     &.visible
-        height: 1px;
+        min-height: 1px;
         width: 1px;
         opacity: 1;
     &.height
-        height: 350px;
+        min-height: 325px;
+        height: auto;
     &.width
         width: 40%;
-        padding: 30px 20px;
+        padding: 30px 20px 20px;
 form#contact
     opacity: 0;
     transition: all  500ms ease-in-out;
@@ -900,5 +903,8 @@ form#contact
             color: #fff;
             border: 1px solid #333;
             border-radius: 0;
+            &:hover
+                background: darken($logo-teal, 10%);
+                cursor: pointer;
 
 @import 'mediaqueries';

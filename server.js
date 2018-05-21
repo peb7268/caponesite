@@ -37,6 +37,11 @@ app.post('/contact', (req, res)=>{
 	`;
 	msg_html = msg_html.trim();
 
+	setTimeout(()=> {
+		res.status(200).send('success');
+	}, 1200);
+
+	/*
 	let MANDRILL_CONFIGS = {
 		protocall: 'https',
 		base_endpoint: 'mandrillapp.com/api/1.0/SOME-METHOD.OUTPUT_FORMAT',
@@ -95,6 +100,9 @@ app.post('/contact', (req, res)=>{
 		// A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
 		res.status(500).send('error');
 	});
+	
+	*/
+
 });
 
 //Port Configs

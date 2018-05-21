@@ -58,7 +58,6 @@ function bindEvents(){
     $('.nav li:nth-child(3) a').on('click', toggleContactForm);
     $('.nav-toggle').on('click', toggleNav);
     //if(isMobile === false) bindScrollEvents();
-    $('form').on('submit', postFormData);
 }
 
 function toggleContactForm(evt){
@@ -69,11 +68,12 @@ function toggleContactForm(evt){
             id: 'shade'
         });
         $('body').append($shade);
+        $('#shade').on('click', reatractContactForm);
     }
-    window.setTimeout(() => fadeInShade($shade), 200);
+    window.setTimeout(() => showContactForm($shade), 200);
 }
 
-function fadeInShade($shade){
+function showContactForm($shade){
     $shade.addClass('active');
     let $formWrapper = $('#formWrapper');
     if($formWrapper.length === 0){
@@ -82,21 +82,50 @@ function fadeInShade($shade){
         });
         $('body').append($formWrapper);
     }
-    window.setTimeout(() => {
-        $formWrapper.addClass('visible');
-        window.setTimeout(() => {
-            $formWrapper.addClass('height');
-            window.setTimeout(() => {
-                $formWrapper.addClass('width');
-            }, 200);
-            window.setTimeout(() => {
-                $('#formWrapper').html($('#contactForm').html());
-                window.setTimeout(()=> {
-                    $('form#contact').addClass('visible');
+    window.setTimeout(() => { $formWrapper.addClass('visible'); startFormTransition($formWrapper); }, 200);
+}
+
+window.reatractContactForm = function(){
+    //Fadeout form
+    //contract it
+    //minimize height
+    $('form#contact').removeClass('visible');
+    window.setTimeout(()=> {
+        $('form#contact').remove();
+        window.setTimeout(()=> {
+            $('#formWrapper').removeClass('width');
+            window.setTimeout(()=> {
+                $('#formWrapper').removeClass('height');
+                window.setTimeout(()=>{
+                    $('#formWrapper').removeClass('visible');
+                    window.setTimeout(()=>{
+                        $('#shade').removeClass('active');
+                        window.setTimeout(()=>{
+                            $('#shade').remove();
+                        }, 250);
+                    }, 250)
                 }, 250);
-            }, 300);
-        }, 500);
-    }, 200);
+            }, 350);
+        }, 350);
+    }, 350);
+}   
+
+function startFormTransition($formWrapper){
+    window.setTimeout(() => { $formWrapper.addClass('height'); widenFormWrapper($formWrapper); }, 300);
+}
+
+function widenFormWrapper($formWrapper){
+    window.setTimeout(() => { $formWrapper.addClass('width'); populateFormDom($formWrapper); }, 500);
+}
+
+function populateFormDom($formWrapper){
+    window.setTimeout(() => {
+        $('#formWrapper').html($('#contactForm').html());
+        window.setTimeout(()=> {
+            $('form#contact').addClass('visible');
+            $('form').on('submit', postFormData);
+        }, 100);
+    }, 150);
 }
 
 function addZIndex(evt){
@@ -125,16 +154,10 @@ function postFormData(evt){
         data: {data: $(evt.target).serialize()}
     })
     .done(function(resp){
-        $('form').fadeOut(250, function(evt){
-            $(this).addClass('success').html('Your message has been submitted. We\'ll be in touch soon!');
-            $(this).fadeIn(250);
-        });
+        reatractContactForm();
     })
     .fail(function(){
-        $('form').fadeOut(250, function(evt){
-            $(this).addClass('error').html('Oops there was an error, please submit your message to ovi@4gconline.com');
-            $(this).fadeIn(250);
-        });
+        console.error('form fail');
     });
 }
 
