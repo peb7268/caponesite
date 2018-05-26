@@ -63,10 +63,7 @@ function bindEvents(){
     $(window).on('resize', toggleCapabilities);
     $('.hero .col').on('mouseover', addZIndex);
     $('.hero .col').on('mouseout', removeZIndex);
-    // $('.nav li a, .cta-btn').on('click', function(evt){
-    //     evt.preventDefault();
-    //     navigate(evt);
-    // });
+
     $('.nav-toggle').on('click', toggleNav);
     $('.btt').on('click', scrollToTop);
 
@@ -78,11 +75,14 @@ function bindEvents(){
 function addZIndex(evt){
     $('.hero .col').removeAttr('style');
     $(this).css('zIndex', 10);
-    // if($(this).is(':odd')){
-    //     //zindex the 
-    // } else {
-
-    // }
+    
+    if($(this).is(':odd')){
+        console.log('odd');
+        debugger;
+    } else {
+        console.log('even');
+        debugger;
+    }
 }
 
 function removeZIndex(evt){
