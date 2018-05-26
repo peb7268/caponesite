@@ -55,7 +55,9 @@ function changeTestimonial($container, testimonials, testimonialIdx){
 
 function bindEvents(){
     $(window).on('resize', toggleCapabilities);
-    $('.nav li:nth-child(3) a').on('click', toggleContactForm);
+    $('.hero .col').on('mouseover', addZIndex);
+    $('.hero .col').on('mouseout', removeZIndex);
+
     $('.nav-toggle').on('click', toggleNav);
     //if(isMobile === false) bindScrollEvents();
 }
@@ -131,11 +133,14 @@ function populateFormDom($formWrapper){
 function addZIndex(evt){
     $('.hero .col').removeAttr('style');
     $(this).css('zIndex', 10);
-    // if($(this).is(':odd')){
-    //     //zindex the 
-    // } else {
-
-    // }
+    
+    if($(this).is(':odd')){
+        console.log('odd');
+        debugger;
+    } else {
+        console.log('even');
+        debugger;
+    }
 }
 
 function removeZIndex(evt){
