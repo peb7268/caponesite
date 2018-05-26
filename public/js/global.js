@@ -58,6 +58,7 @@ function bindEvents(){
     $('.hero .col').on('mouseover', addZIndex);
     $('.hero .col').on('mouseout', removeZIndex);
 
+    $('.nav li:nth-child(3) a').on('click', toggleContactForm);
     $('.nav-toggle').on('click', toggleNav);
     //if(isMobile === false) bindScrollEvents();
 }
